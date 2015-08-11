@@ -1,0 +1,57 @@
+@panel-zindex: 1000;
+@panel-overlay-bg: rgba(0, 0, 0, .1);
+@panel-content-width: 100%;
+@panel-content-bg: #fff;
+
+.@{ns}panel {
+  display: none;
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: @panel-zindex;
+  background: @panel-overlay-bg;
+  opacity: 0;
+  .transition(opacity 0.3s ease-in-out);
+
+  &.@{ns}active {
+    display: block;
+    opacity: 1;
+  }
+}
+
+.@{ns}panel-page {
+  position: fixed;
+  .transition(margin-left 0.3s ease-in-out);
+  overflow: hidden;
+}
+
+.@{ns}panel-content {
+  .box-sizing(border-box);
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  .translate(-100%, 0);
+  z-index: @panel-zindex+1;
+  width: @panel-content-width;
+  max-width: 100%;
+
+  overflow-x: hidden;
+  overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
+
+  .transition(all 0.3s ease-in-out);
+
+}
+
+.@{ns}panel.@{ns}active .@{ns}panel-content.@{ns}active {
+  .translate(0, 0);
+}
+
+.@{ns}panel-flip {
+  left: auto;
+  right: 0;
+  .translate(100%, 0);
+}

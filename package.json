@@ -1,0 +1,20 @@
+{
+  "name": "ccze_wechat_client",
+  "version": "0.0.1",
+  "description": "ccze wechat client frontend static resource",
+  "author": "gxm",
+  "license": "BSD",
+  "devDependencies": {
+    "grunt": "^0.4.5",
+    "grunt-contrib-compress": "^0.13.0",
+    "grunt-contrib-concat": "^0.3.0",
+    "grunt-contrib-copy": "^0.8.0",
+    "grunt-contrib-cssmin": "^0.7.0",
+    "grunt-contrib-less": "^1.0.1",
+    "grunt-contrib-uglify": "^0.9.1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/liukaijv/ccze_webapp.git"
+  }
+}

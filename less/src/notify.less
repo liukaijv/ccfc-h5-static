@@ -1,0 +1,36 @@
+
+.@{ns}notify-mask {
+  z-index: @maskIndex + 99999;
+}
+
+.@{ns}notify {
+  position: fixed;
+  z-index: @maskIndex + 99999;
+  width: 300px;
+  margin: auto;
+  &.@{ns}notify-center {
+    top: 50%;
+    left: 50%;
+    .translate(-50%, -50%);
+  }
+}
+
+.@{ns}notify-message {
+  background-color: rgba(0, 0, 0, .6);
+  position: relative;
+  border-radius: 4px;
+  margin-bottom: 10px;
+  .@{ns}close {
+    color: #fff;
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    margin-top: -11px;
+  }
+}
+
+.@{ns}notify-content {
+  color: #fff;
+  padding: 12px;
+  text-align: center;
+}

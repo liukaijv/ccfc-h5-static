@@ -1,0 +1,96 @@
+// 按钮
+.btn {
+  display: inline-block;
+  margin-left: 10px;
+  text-align: center;
+  white-space: nowrap;
+  font-size: 1.4rem;
+  height: 3.6rem;
+  line-height: 3.6rem;
+  border: 1px solid @baseBorderColor;
+  padding: 0 1.2rem;
+  color: @baseColor;
+  border-radius: .2rem;
+  background: transparent;
+  &:first-child {
+    margin-left: 0;
+  }
+  // size
+  &.lg {
+    font-size: 1.6rem;
+    height: 4.4rem;
+    line-height: 4.4rem;
+  }
+  &.sm {
+    font-size: 1.2rem;
+    height: 2.8rem;
+    line-height: 2.8rem;
+  }
+  &:disabled,
+  &.disabled {
+    background-color: #f1f1f1 !important;
+    color: #999 !important;
+    border: 1px solid @baseBorderColor !important;
+    cursor: default;
+  }
+  &.btn-fill {
+    color: #fff !important;
+  }
+  // [type="button"]&,
+  // button&{
+  // 	width: 100%;
+  // }
+}
+
+.create-btn(@bgColor, @borderColor, @color: #fff) {
+  .btn;
+  background: transparent;
+  border: 1px solid @borderColor;
+  color: @color;
+  .transition(background-color .3s);
+  &:hover {
+    // background-color: lighten(@bgColor, 5%);
+  }
+  &:active {
+    background-color: #f1f1f1;
+  }
+  &.btn-fill {
+    background: @bgColor;
+    &:hover {
+      // background-color: lighten(@bgColor, 5%);
+    }
+    &:active {
+      background-color: darken(@bgColor, 5%);
+    }
+    &:disabled,
+    &.disabled {
+      background-color: @baseBorderColor !important;
+    }
+  }
+  &.@{ns}active {
+    background: @bgColor;
+    color: #fff;
+  }
+}
+
+.btn-primary {
+  .create-btn(#f08519, darken(#f08519, 5%), #f86f4b);
+}
+
+.btn-yellow {
+  .create-btn(#f8a84b, darken(#f8a84b, 5%), #f8a84b);
+}
+
+// 垂直按钮组
+.btn-group {
+
+}
+
+// 水平按钮组
+.btn-bar {
+
+}
+
+.btn-block {
+  display: block;
+}

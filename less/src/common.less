@@ -1,0 +1,149 @@
+// 浮动相关 
+.clearfix {
+  &:before,
+  &:after {
+    content: "";
+    display: table;
+  }
+  &:after {
+    clear: both;
+  }
+}
+
+.clear {
+  clear: both;
+}
+
+.mod {
+  overflow: hidden;
+}
+
+.left {
+  float: left;
+}
+
+.center {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.right {
+  float: right;
+}
+
+// 字体相关 
+.text-left {
+  text-align: left;
+}
+
+.text-right {
+  text-align: right;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.text-justify {
+  text-align: justify;
+}
+
+.text-middle {
+  vertical-align: middle;
+}
+
+.text-top {
+  vertical-align: top;
+}
+
+.text-bottom {
+  vertical-align: bottom;
+}
+
+// font style
+.bold {
+  font-weight: bold;
+}
+
+.italic {
+  font-style: italic;
+}
+
+.line-through {
+  text-decoration: line-through;
+}
+
+// 块相关
+.none,
+.hide {
+  display: none;
+}
+
+.block,
+.show {
+  display: block;
+}
+
+.inline-block {
+  display: inline-block;
+  vertical-align: middle;
+}
+
+.visually-hidden {
+  position: absolute !important;
+  border: 0 !important;
+  height: 1px !important;
+  width: 1px !important;
+  padding: 0 !important;
+  overflow: hidden !important;
+  clip: rect(1px, 1px, 1px, 1px) !important;
+}
+
+.img-responsive {
+  max-width: 100%;
+}
+
+.img-preserve {
+  max-width: none;
+}
+
+.text-nowrap {
+  overflow: hidden;
+  white-space: nowrap;
+}
+
+.text-truncate {
+  word-wrap: normal;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+}
+
+.text-break {
+  -moz-hyphens: auto;
+  -ms-hyphens: auto;
+  -webkit-hyphens: auto;
+  hyphens: auto;
+  word-wrap: break-word;
+}
+
+.line1 {
+  display: block;
+  .text-truncate;
+}
+
+.line2 {
+  .line-clamp(2, @baseLineHeight);
+}
+
+.force-inline {
+  display: inline-block !important;
+}
+
+.force-block {
+  display: block !important;
+}
+
+.force-hide {
+  display: none !important;
+}

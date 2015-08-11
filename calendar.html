@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no, minimal-ui">
+    <title>cczc webapp</title>
+    <!-- 其它的meta标签后面再加 -->
+    <!-- <link rel="stylesheet" href="css/amazeui.min.css" /> -->
+    <link rel="stylesheet" href="css/font-awesome.min.css"/>
+    <link rel="stylesheet" href="css/main.min.css"/>
+    <script src="js/vendors/jquery/jquery.min.js"></script>
+    <script src="js/main.min.js"></script>
+</head>
+<body>
+
+<div id="calendar"></div>
+
+<script>
+    $(function () {
+        var date = new Date();
+        $('#calendar').calendar({
+            date: new Date(date.getFullYear(), date.getMonth(), date.getDate()),
+            minDate: new Date(date.getFullYear(), date.getMonth(), date.getDate()),
+            datePrice: [{
+                '20150805': {
+                    'price': '55.00'
+                },
+                '2015-08-06': {
+                    'price': '55.00'
+                },
+                '2015-08-25': {
+                    'price': '155.00'
+                }]
+        }
+    });
+    $('#calendar').on('select.calendar', function (e, date) {
+        console.log(date);
+    });
+    })
+    ;
+</script>
+
+</body>
+</html>

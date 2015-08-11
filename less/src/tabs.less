@@ -1,0 +1,99 @@
+@tabsHeight: 4.4rem;
+
+.@{ns}tabs-nav {
+  margin: 0;
+  padding: 0;
+  height: @tabsHeight;
+  line-height: @tabsHeight;
+  text-align: center;
+  width: 100%;
+  .display;
+  border-bottom: 1px solid @baseBorderColor;
+  li {
+    position: relative;
+    a {
+      display: block;
+      color: inherit;
+    }
+    &.@{ns}active {
+      .color-pink;
+      &:after {
+        content: "";
+        position: absolute;
+        left: 50%;
+        bottom: -1px;
+        width: 80%;
+        margin-left: -40%;
+        height: 2px;
+        overflow: hidden;
+        background-color: #f86851;
+      }
+    }
+    &:not(.@{ns}tabs-more) {
+      .flex();
+    }
+    &.@{ns}tabs-more {
+      width: 4.4rem;
+      text-align: center;
+      color: #999;
+    }
+  }
+}
+
+.@{ns}tabs-content {
+  position: relative;
+  overflow: hidden;
+  border-top: none;
+  .transition(height 0.3s);
+  .@{ns}tabs-panel {
+    position: absolute;
+    top: 0;
+    float: left;
+    width: 100%;
+    visibility: hidden;
+    .transition(all 0.3s);
+    .translate(-100%);
+    * {
+      -webkit-user-drag: none;
+      user-drag: none;
+    }
+    &.@{ns}active {
+      position: relative;
+      visibility: visible;
+      .translate(0, 0);
+
+      & ~ .@{ns}tabs-panel {
+        .translate(100%);
+      }
+    }
+  }
+}
+
+.@{ns}navigator-list {
+  margin: 0;
+  padding: 0;
+  height: @tabsHeight;
+  line-height: @tabsHeight;
+  text-align: center;
+  width: 100%;
+  white-space: nowrap;
+  background-color: #fff;
+  li {
+    position: relative;
+    display: inline-block;
+    a {
+      display: block;
+      padding: 0 2.5rem;
+      min-width: 2rem;
+      text-align: center;
+      color: inherit;
+    }
+    &.@{ns}active {
+      .color-pink;
+    }
+  }
+}
+
+.@{ns}hscroller {
+  border-bottom: 1px solid @baseBorderColor;
+}

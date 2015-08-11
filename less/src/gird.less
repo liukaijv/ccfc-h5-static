@@ -1,0 +1,76 @@
+// make table row 
+.table-row() {
+  display: table;
+  width: 100%;
+  table-layout: fixed;
+  & > .col,
+  & > * {
+    display: table-cell;
+  }
+}
+
+//  flex gird
+.flex-row {
+  .display();
+}
+
+.flex {
+  .flex(1, 1, 0%);
+}
+
+.flex-h {
+  .flex-direction(row);
+  .flex-wrap(wrap);
+}
+
+.flex-v {
+  .flex-direction(column);
+  .flex-wrap(wrap);
+}
+
+.flex-start {
+  .justify-content(flex-start);
+  text-align: start;
+}
+
+.flex-center {
+  .justify-content(center);
+  text-align: center;
+}
+
+.flex-end {
+  .justify-content(flex-end);
+  text-align: end;
+}
+
+.flex-top {
+  .align-items(flex-start);
+}
+
+.flex-middle {
+  .align-items(center);
+}
+
+.flex-bottom {
+  .align-items(flex-end);
+}
+
+.flex-around {
+  .justify-content(space-around);
+}
+
+.flex-between {
+  .justify-content(space-between);
+}
+
+.flex-first {
+  .order(-1);
+}
+
+.flex-mid {
+  .order(1);
+}
+
+.flex-end {
+  .order(42);
+}

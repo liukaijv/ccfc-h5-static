@@ -1,0 +1,75 @@
+.@{ns}calendar-week {
+  width: 100%;
+  display: table;
+  table-layout: fixed;
+  background-color: #e4e4e4;
+  li {
+    display: table-cell;
+    width: 1%;
+    padding: .5rem;
+    text-align: center;
+    line-height: 2.5rem;
+  }
+}
+
+.@{ns}calendar-content {
+
+}
+
+.@{ns}calendar-header {
+  text-align: center;
+  padding: .5rem;
+  background: #f1f1f1;
+}
+
+.@{ns}calendar-calendar {
+  width: 100%;
+  line-height: 2rem;
+  table-layout: fixed;
+}
+
+.@{ns}calendar-calendar td {
+  text-align: center;
+  background: #fff;
+  border: 2px solid #f7f7f7;
+  font-weight: normal;
+}
+
+.@{ns}calendar-calendar td > a {
+  text-decoration: none;
+  color: #000;
+  display: block;
+  padding: .5rem;
+  height: 4.5rem;
+  &.@{ns}active {
+    background: #f2e5e2;
+    color: #000;
+  }
+}
+
+.@{ns}calendar-calendar td.@{ns}calendar-unSelectable {
+  color: #e1e1e1;
+  span {
+    display: block;
+    padding: .5rem;
+  }
+}
+
+.@{ns}state-disabled {
+  height: 4.5rem;
+}
+
+.@{ns}calendar-price {
+  font-size: 12px;
+  display: block;
+  color: #f86851;
+  line-height: 1.5rem;
+  white-space: nowrap;
+}
+
+// .@{ns}calendar-calendar td.@{ns}calendar-today {
+//     background: #f2e5e2;
+// }
+.@{ns}calendar-calendar td.@{ns}calendar-current-day {
+  background: #f2e5e2;
+}

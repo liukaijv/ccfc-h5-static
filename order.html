@@ -1,0 +1,544 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no, minimal-ui">
+    <title>cczc webapp</title>
+    <!-- 其它的meta标签后面再加 -->
+    <!-- <link rel="stylesheet" href="css/amazeui.min.css" /> -->
+    <link rel="stylesheet" href="css/font-awesome.min.css"/>
+    <link rel="stylesheet" href="css/main.min.css"/>
+    <script src="js/vendors/jquery/jquery.min.js"></script>
+    <script src="js/main.min.js"></script>
+    <!-- testjs -->
+    <script>
+        $(function () {
+            $('#confirmOrder').on('click', function () {
+                $.confirm('这一秒不放弃，下一秒有奇迹！', function () {
+                    $.alert('你确认了');
+                }, function () {
+                    $.alert('你取消了');
+                });
+                return false;
+            });
+        });
+    </script>
+</head>
+<body>
+<header class="cc-header">
+    <a href="#" class="cc-back" data-back></a>
+
+    <h2 class="cc-title">填写订单</h2>
+</header>
+<ul class="cc-list">
+    <li>
+        <div class="list-inner flex-row flex-middle">
+            <div class="mr10">
+                <img src="images/wechat-icon.png" width="40">
+            </div>
+            <div class="line2 flex">
+                成都-九寨沟-黄龙3天2晚双汽跟团游
+            </div>
+            <div class="ml10 color-pink">
+                ￥2343.00
+            </div>
+        </div>
+    </li>
+</ul>
+<div class="divider-gutter">
+</div>
+<ul class="cc-list">
+    <li class="list-header">
+        <span class="color-brown">出行日期</span>
+    </li>
+    <li class="link-item">
+        <div class="list-inner">
+            2015年08月12日 星期五
+        </div>
+    </li>
+</ul>
+<div class="divider-gutter">
+</div>
+<ul class="cc-list">
+    <li class="list-header">
+        <span class="color-brown">出行人数</span>
+    </li>
+    <li class="link-item" data-role="panel" data-target="#numberPanel">
+        <div class="list-inner">
+            <div class="left">
+                成人/儿童（12周岁以下）
+            </div>
+            <span class="right color-yellow">未选择</span>
+        </div>
+    </li>
+</ul>
+<div class="divider-gutter">
+</div>
+<ul class="cc-list">
+    <li class="list-header link-item" data-role="panel" data-target="#servicePanel">
+        <span class="color-brown left">增值服务</span>
+        <span class="right">批量选择</span>
+
+        <div class="clear">
+        </div>
+    </li>
+    <li class="link-item" data-role="panel" data-target="#servicePanel">
+        <div class="list-inner">
+            <div class="left">
+                【必选】露营椅
+            </div>
+            <span class="right color-yellow">1张</span>
+        </div>
+    </li>
+    <li class="link-item" data-role="panel" data-target="#servicePanel">
+        <div class="list-inner">
+            <div class="left">
+                煤气罐
+            </div>
+            <span class="right color-yellow">未选择</span>
+        </div>
+    </li>
+</ul>
+<div class="divider-gutter">
+</div>
+<ul class="cc-list">
+    <li class="list-header">
+        <span class="color-brown">联系人</span>
+    </li>
+    <li class="link-item" data-role="panel" data-target="#contactPanel">
+        <div class="list-inner">
+            <div class="left color-gray">
+                请点击添加联系人信息
+            </div>
+        </div>
+    </li>
+</ul>
+<div class="divider-gutter">
+</div>
+<ul class="cc-list">
+    <li class="list-header">
+        <span class="color-brown">旅客信息</span>
+    </li>
+    <li class="link-item" data-role="panel" data-target="#travellerPanel">
+        <div class="list-inner">
+            <div class="left color-gray">
+                请点击添加旅客信息
+            </div>
+        </div>
+    </li>
+</ul>
+<div class="divider-gutter">
+</div>
+<ul class="cc-list">
+    <li class="list-header">
+        <span class="color-brown">优惠</span>
+    </li>
+    <li class="link-item" data-role="panel" data-target="#couponPanel">
+        <div class="list-inner">
+            <div class="left">
+                优惠券
+            </div>
+            <span class="right color-yellow">未选择</span>
+        </div>
+    </li>
+    <li>
+        <label class="list-inner flex-row flex-middle">
+            <div class="mr10">
+                CC豆
+            </div>
+            <div class="flex">
+                可用1024，抵1.24元
+            </div>
+            <div class="ml10">
+                <input type="checkbox" class="cc-toggle">
+            </div>
+        </label>
+    </li>
+    <li class="link-item" data-role="panel" data-target="#referrerPanel">
+        <div class="list-inner">
+            <div class="left">
+                使用推荐号
+            </div>
+            <span class="right color-yellow">未填写</span>
+        </div>
+    </li>
+</ul>
+<div class="divider-gutter">
+</div>
+<ul class="cc-list">
+    <li class="list-header">
+        <span class="color-brown">明细</span>
+    </li>
+    <li>
+        <div class="clearfix">
+            <div class="left">
+                房车旅行产品金额
+            </div>
+            <div class="right">
+                3800.00
+            </div>
+        </div>
+        <div class="clearfix mt5">
+            <div class="left">
+                增值服务
+            </div>
+            <div class="right">
+                200.00
+            </div>
+        </div>
+        <div class="clearfix mt5">
+            <div class="left">
+                优惠券
+            </div>
+            <div class="right">
+                -100.00
+            </div>
+        </div>
+        <div class="clearfix mt5">
+            <div class="left">
+                CC豆
+            </div>
+            <div class="right">
+                -1.24
+            </div>
+        </div>
+        <div class="clearfix mt5">
+            <div class="left">
+                推荐码
+            </div>
+            <div class="right">
+                -50.00
+            </div>
+        </div>
+        <div class="clearfix mt5">
+            <div class="left">
+                应付金额
+            </div>
+            <div class="right color-pink">
+                ￥4250.00
+            </div>
+        </div>
+    </li>
+</ul>
+<div class="bg-gray p10">
+    <label>
+        <input type="checkbox" checked class="cc-checkbox">
+      <span class="inline-block">
+        我已阅读并接受
+      </span>
+    </label>
+    <span class="inline-block ml5">
+      <a href="#" class="color-yellow">《合同协议》</a>
+    </span>
+</div>
+<a href="#" id="confirmOrder" class="goods-reserve-btn">
+    <i class="icon icon-shopping-cart"></i>
+    提交订单
+</a>
+<!-- numberPanel -->
+<div class="cc-panel" id="numberPanel">
+    <div class="cc-panel-content cc-panel-flip bg-gray">
+        <header class="cc-header">
+            <a href="#" class="cc-back" data-panel="close"></a>
+
+            <h2 class="cc-title">商品数量</h2>
+        </header>
+        <ul class="cc-list">
+            <li class="list-header">
+                <i class="icon icon-calendar color-pink"></i>
+                2015年08月12日 星期五 出发
+            </li>
+            <li>
+                <div class="list-inner">
+                    <div class="left">
+                        成人
+                        <p class="color-gray">
+                            单价：<span class="color-pink">￥1233/人</span>
+                        </p>
+                    </div>
+                    <div class="right">
+                        <div class="cc-spinner">
+                            <span class="minus">-</span>
+                            <input type="text" class="num" size="1" value="0">
+                            <span class="plus">+</span>
+                        </div>
+                    </div>
+                </div>
+            </li>
+            <li>
+                <div class="list-inner">
+                    <div class="left">
+                        儿童 （12周岁以下）
+                        <p class="color-gray">
+                            单价：<span class="color-pink">￥600/人</span>
+                        </p>
+                    </div>
+                    <div class="right">
+                        <div class="cc-spinner">
+                            <span class="minus disabled">-</span>
+                            <input type="text" class="num" size="1" value="0">
+                            <span class="plus">+</span>
+                        </div>
+                    </div>
+                </div>
+        </ul>
+        <div class="m10">
+            <a href="#" class="btn-yellow btn-fill btn-block lg">确定</a>
+        </div>
+    </div>
+</div>
+<!-- /numberPanel -->
+<!-- servicePanel -->
+<div class="cc-panel" id="servicePanel">
+    <div class="cc-panel-content cc-panel-flip bg-gray">
+        <header class="cc-header">
+            <a href="#" class="cc-back" data-panel="close"></a>
+
+            <h2 class="cc-title">选择增值服务</h2>
+        </header>
+        <ul class="cc-list">
+            <li class="list-header">
+                <i class="icon icon-calendar color-pink"></i>
+                2015年08月12日 星期五 出发
+            </li>
+            <li>
+                <a href="#" class="list-media">
+                    <img src="images/wechat-icon.png" width="40">
+                </a>
+
+                <div class="list-inner">
+                    <div class="left">
+                        成人
+                        <p class="color-gray">
+                            单价：<span class="color-pink">￥1233/人</span>
+                        </p>
+                    </div>
+                    <div class="right">
+                        <div class="cc-spinner">
+                            <span class="minus">-</span>
+                            <input type="text" class="num" size="1" value="0">
+                            <span class="plus">+</span>
+                        </div>
+                    </div>
+                </div>
+            </li>
+            <li>
+                <a href="#" class="list-media">
+                    <img src="images/wechat-icon.png" width="40">
+                </a>
+
+                <div class="list-inner">
+                    <div class="left">
+                        儿童 （12周岁以下）
+                        <p class="color-gray">
+                            单价：<span class="color-pink">￥600/人</span>
+                        </p>
+                    </div>
+                    <div class="right">
+                        <div class="cc-spinner">
+                            <span class="minus disabled">-</span>
+                            <input type="text" class="num" size="1" value="0">
+                            <span class="plus">+</span>
+                        </div>
+                    </div>
+                </div>
+        </ul>
+        <div class="m10">
+            <a href="#" class="btn-yellow btn-fill btn-block lg">确定</a>
+        </div>
+    </div>
+</div>
+<!-- /servicePanel -->
+<!-- contactPanel -->
+<div class="cc-panel" id="contactPanel">
+    <div class="cc-panel-content cc-panel-flip bg-gray">
+        <header class="cc-header">
+            <a href="#" class="cc-back" data-panel="close"></a>
+
+            <h2 class="cc-title">填写联系人</h2>
+        </header>
+        <ul class="cc-list">
+            <li class="input-row">
+                <label>姓名</label>
+                <input class="cc-input" placeholder="用于供应商联系您">
+            </li>
+            <li class="input-row">
+                <label>手机号</label>
+                <input class="cc-input" placeholder="用于接收短信">
+            </li>
+            <li class="input-row">
+                <label>验证码</label>
+                <input class="cc-input" placeholder="验证码">
+                <button class="btn-primary">获取验证码</button>
+            </li>
+            <li class="input-row">
+                <label>留言</label>
+                <input class="cc-input" placeholder="如有特殊需求，请留言">
+            </li>
+        </ul>
+        <div class="m10">
+            <a href="#" class="btn-yellow btn-fill btn-block lg">确定</a>
+        </div>
+    </div>
+</div>
+<!-- /contactPanel -->
+<!-- travellerPanel -->
+<div class="cc-panel" id="travellerPanel">
+    <div class="cc-panel-content cc-panel-flip bg-gray">
+        <header class="cc-header">
+            <a href="#" class="cc-back" data-panel="close"></a>
+
+            <h2 class="cc-title">填写旅客信息</h2>
+        </header>
+        <ul class="cc-list">
+            <li class="input-row">
+                <label>姓名</label>
+                <input class="cc-input" placeholder="用于购买旅游意外险">
+            </li>
+            <li class="input-row">
+                <label>身份证号码</label>
+                <input class="cc-input" placeholder="请准确填写">
+            </li>
+        </ul>
+
+        <div class="m10">
+            <a href="#" class="btn-yellow btn-fill btn-block lg">确定</a>
+        </div>
+    </div>
+</div>
+<!-- /travellerPanel -->
+<!-- couponPanel -->
+<div class="cc-panel" id="couponPanel">
+    <div class="cc-panel-content cc-panel-flip bg-gray">
+        <header class="cc-header">
+            <a href="#" class="cc-back" data-panel="close"></a>
+
+            <h2 class="cc-title">选择优惠券</h2>
+        </header>
+        <div class="cc-tabs bg-white">
+            <ul class="cc-tabs-nav" data-role="tabs">
+                <li>
+                    <a href="#available-coupon">可用优惠券（2）</a>
+                </li>
+                <li>
+                    <a href="#unavailable-coupon">不可以用优惠券（3）</a>
+                </li>
+            </ul>
+
+
+            <div class="cc-tabs-content">
+
+                <div class="cc-tabs-panel" id="available-coupon">
+
+                    <ul class="cc-list">
+                        <li>
+                            <label class="coupon-list-inner">
+                                <div class="coupon-value color-yellow">
+                                    <span>￥</span>30
+                                </div>
+                                <div class="flex">
+                                    满168可用
+                                    <p class="color-gray f12">
+                                        2015/6/8 至 2015/6/28
+                                    </p>
+                                </div>
+                                <div>
+                                    <input type="radio" class="cc-radio" name="radio">
+                                </div>
+                            </label>
+                        </li>
+                        <li>
+                            <label class="coupon-list-inner">
+                                <div class="coupon-value color-blue">
+                                    <span>￥</span>3
+                                </div>
+                                <div class="flex">
+                                    满168可用
+                                    <p class="color-gray f12">
+                                        2015/6/8 至 2015/6/28
+                                    </p>
+                                </div>
+                                <div>
+                                    <input type="radio" class="cc-radio" name="radio">
+                                </div>
+                            </label>
+                        </li>
+                    </ul>
+
+                </div>
+
+                <div class="cc-tabs-panel" id="unavailable-coupon">
+
+                    <ul class="cc-list">
+                        <li>
+                            <label class="coupon-list-inner color-gray">
+                                <div class="coupon-value">
+                                    <span>￥</span>30
+                                </div>
+                                <div class="flex">
+                                    满168可用
+                                    <p class="f12">
+                                        2015/6/8 至 2015/6/28
+                                    </p>
+                                </div>
+                                <div>
+                                    <input type="radio" class="cc-radio" disabled name="radio">
+                                </div>
+                            </label>
+                        </li>
+                        <li>
+                            <label class="coupon-list-inner color-gray">
+                                <div class="coupon-value">
+                                    <span>￥</span>3
+                                </div>
+                                <div class="flex">
+                                    满168可用
+                                    <p class="f12">
+                                        2015/6/8 至 2015/6/28
+                                    </p>
+                                </div>
+                                <div>
+                                    <input type="radio" class="cc-radio" disabled name="radio">
+                                </div>
+                            </label>
+                        </li>
+                    </ul>
+
+                </div>
+
+            </div>
+
+        </div>
+
+        <div class="m10">
+            <a href="#" class="btn-yellow btn-fill btn-block lg">确定</a>
+        </div>
+    </div>
+</div>
+<!-- /couponPanel -->
+
+<!-- referrerPanel -->
+<div class="cc-panel" id="referrerPanel">
+    <div class="cc-panel-content cc-panel-flip bg-gray">
+        <header class="cc-header">
+            <a href="#" class="cc-back" data-panel="close"></a>
+
+            <h2 class="cc-title">推荐号</h2>
+        </header>
+        <ul class="cc-list">
+            <li class="input-row">
+                <label>推荐人手机号</label>
+                <input class="cc-input" placeholder="填写手机号码">
+            </li>
+        </ul>
+
+        <div class="m10">
+            <a href="#" class="btn-yellow btn-fill btn-block lg">确定</a>
+        </div>
+    </div>
+</div>
+<!-- /referrerPanel -->
+
+</body>
+</html>

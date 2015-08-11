@@ -1,0 +1,100 @@
+.make-avg-grid(@name, @counter) {
+  .@{name}-avg-list@{counter} {
+    .clearfix;
+    > li {
+      float: left;
+      width: (100% / @counter);
+      .box-sizing();
+      &:nth-of-type(n) {
+        clear: none;
+      }
+      &:nth-of-type(@{counter}n+1) {
+        clear: both;
+      }
+    }
+  }
+}
+
+.make-avg-grid(@name: cc, 3);
+
+.@{ns}list {
+  background-color: #fff;
+  li {
+    padding: 1rem 0;
+    margin: 0 1rem;
+    border-bottom: 1px solid @baseBorderColor;
+    position: relative;
+    &:last-child {
+      border-bottom: none;
+    }
+    &.list-header {
+      // color: @brown;
+      .clearfix;
+      margin: 0;
+      padding: 1.2rem 1rem 1rem;
+      border-bottom: 1px solid @baseBorderColor;
+      &.link-item {
+        padding-right: 2.6rem;
+        &:after {
+          right: 1.4rem;
+        }
+      }
+    }
+    &.link-item {
+      cursor: pointer;
+      &:after {
+        content: "";
+        position: absolute;
+        right: .4rem;
+        top: 50%;
+        margin-top: -.5rem;
+        .arrow(@baseBorderColor; 1rem; .2rem; 45deg);
+      }
+      & > a {
+        display: block;
+      }
+      .list-inner {
+        padding-right: 1.6rem;
+      }
+    }
+    .list-media {
+      float: left;
+      margin-right: 1rem;
+      & + .list-inner {
+        //清除浮动
+        &:after {
+          content: "";
+          display: table;
+          clear: both;
+        }
+      }
+    }
+    .list-inner {
+      .clearfix;
+    }
+    .list-title {
+      .text-truncate;
+    }
+    .list-description {
+      color: @gray;
+      .line2;
+    }
+    // form
+    &.input-row {
+      .display();
+      .flex-middle;
+      label {
+        color: #b4783b;
+        line-height: 3.6rem;
+        margin-right: .5rem;
+      }
+      .@{ns}input {
+        .flex();
+        min-height: 3.6rem;
+        line-height: 3.6rem;
+        padding: 0 0.4rem;
+        border: none;
+      }
+    }
+  }
+}
