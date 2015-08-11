@@ -1537,6 +1537,19 @@ img {
 .cc-spinner .num.disabled {
   color: #999999;
 }
+.cc-bg {
+  background-repeat: no-repeat;
+  background-position: center;
+  background-image: url("../images/bg.png");
+  background-size: 80px 45px;
+  background-color: #e6e5e5;
+}
+@media only screen and (-webkit-min-device-pixel-ratio: 2), only screen and (min--moz-device-pixel-ratio: 2), only screen and (-o-min-device-pixel-ratio: 2/1), only screen and (min-device-pixel-ratio: 2), only screen and (min-resolution: 192dpi), only screen and (min-resolution: 2dppx) {
+  .cc-bg {
+    background-image: url("../images/bg.png");
+    background-size: 80px 45px;
+  }
+}
 .cc-tabs-nav {
   margin: 0;
   padding: 0;

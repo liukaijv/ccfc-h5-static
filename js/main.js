@@ -5100,6 +5100,278 @@ $(function () {
     $.notify = notify;
     $.notify.closeAll = closeAll;
 
+})(jQuery);// 图片延时加载
+// "description": "Lazy-loading with data-* attributes, offset and throttle options",
+// "author": "@toddmotto",
+// "license": "MIT",
+// "homepage": "https://github.com/toddmotto/echo",
+
+(function (root, factory) {
+    if (typeof define === 'function' && define.amd) {
+        define(function () {
+            return factory(root);
+        });
+    } else if (typeof exports === 'object') {
+        module.exports = factory;
+    } else {
+        root.echo = factory(root);
+    }
+})(this, function (root) {
+
+    'use strict';
+
+    var echo = {};
+
+    var callback = function () {
+    };
+
+    var offset, poll, delay, useDebounce, unload;
+
+    var isHidden = function (element) {
+        return (element.offsetParent === null);
+    };
+
+    var inView = function (element, view) {
+        if (isHidden(element)) {
+            return false;
+        }
+
+        var box = element.getBoundingClientRect();
+        return (box.right >= view.l && box.bottom >= view.t && box.left <= view.r && box.top <= view.b);
+    };
+
+    var debounceOrThrottle = function () {
+        if (!useDebounce && !!poll) {
+            return;
+        }
+        clearTimeout(poll);
+        poll = setTimeout(function () {
+            echo.render();
+            poll = null;
+        }, delay);
+    };
+
+    echo.init = function (opts) {
+        opts = opts || {};
+        var offsetAll = opts.offset || 0;
+        var offsetVertical = opts.offsetVertical || offsetAll;
+        var offsetHorizontal = opts.offsetHorizontal || offsetAll;
+        var optionToInt = function (opt, fallback) {
+            return parseInt(opt || fallback, 10);
+        };
+        offset = {
+            t: optionToInt(opts.offsetTop, offsetVertical),
+            b: optionToInt(opts.offsetBottom, offsetVertical),
+            l: optionToInt(opts.offsetLeft, offsetHorizontal),
+            r: optionToInt(opts.offsetRight, offsetHorizontal)
+        };
+        delay = optionToInt(opts.throttle, 250);
+        useDebounce = opts.debounce !== false;
+        unload = !!opts.unload;
+        callback = opts.callback || callback;
+        echo.render();
+        if (document.addEventListener) {
+            root.addEventListener('scroll', debounceOrThrottle, false);
+            root.addEventListener('load', debounceOrThrottle, false);
+        } else {
+            root.attachEvent('onscroll', debounceOrThrottle);
+            root.attachEvent('onload', debounceOrThrottle);
+        }
+    };
+
+    echo.render = function () {
+        var nodes = document.querySelectorAll('img[data-echo], [data-echo-background]');
+        var length = nodes.length;
+        var src, elem;
+        var view = {
+            l: 0 - offset.l,
+            t: 0 - offset.t,
+            b: (root.innerHeight || document.documentElement.clientHeight) + offset.b,
+            r: (root.innerWidth || document.documentElement.clientWidth) + offset.r
+        };
+        for (var i = 0; i < length; i++) {
+            elem = nodes[i];
+            if (inView(elem, view)) {
+
+                if (unload) {
+                    elem.setAttribute('data-echo-placeholder', elem.src);
+                }
+
+                if (elem.getAttribute('data-echo-background') !== null) {
+                    elem.style.backgroundImage = "url(" + elem.getAttribute('data-echo-background') + ")";
+                }
+                else {
+                    elem.src = elem.getAttribute('data-echo');
+                }
+
+                if (!unload) {
+                    elem.removeAttribute('data-echo');
+                    elem.removeAttribute('data-echo-background');
+                }
+
+                callback(elem, 'load');
+            }
+            else if (unload && !!(src = elem.getAttribute('data-echo-placeholder'))) {
+
+                if (elem.getAttribute('data-echo-background') !== null) {
+                    elem.style.backgroundImage = "url(" + src + ")";
+                }
+                else {
+                    elem.src = src;
+                }
+
+                elem.removeAttribute('data-echo-placeholder');
+                callback(elem, 'unload');
+            }
+        }
+        if (!length) {
+            echo.detach();
+        }
+    };
+
+    echo.detach = function () {
+        if (document.removeEventListener) {
+            root.removeEventListener('scroll', debounceOrThrottle);
+        } else {
+            root.detachEvent('onscroll', debounceOrThrottle);
+        }
+        clearTimeout(poll);
+    };
+
+    return echo;
+
+});
+// 平滑滚动
+// 默认<span data-smooth-scroll>回到顶部</span> 
+
+;
+(function ($) {
+
+    var rAF = UI.utils.rAF;
+    var cAF = UI.utils.cancelAF;
+
+    /**
+     * Smooth Scroll
+     * @param position
+     * @via http://mir.aculo.us/2014/01/19/scrolling-dom-elements-to-the-top-a-zepto-plugin/
+     */
+
+    // Usage: $(window).smoothScroll([options])
+
+    // only allow one scroll to top operation to be in progress at a time,
+    // which is probably what you want
+    var smoothScrollInProgress = false;
+
+    var SmoothScroll = function (element, options) {
+        options = options || {};
+
+        var $this = $(element);
+        var targetY = parseInt(options.position) || SmoothScroll.DEFAULTS.position;
+        var initialY = $this.scrollTop();
+        var lastY = initialY;
+        var delta = targetY - initialY;
+        // duration in ms, make it a bit shorter for short distances
+        // this is not scientific and you might want to adjust this for
+        // your preferences
+        var speed = options.speed || Math.min(750, Math.min(1500, Math.abs(initialY - targetY)));
+        // temp variables (t will be a position between 0 and 1, y is the calculated scrollTop)
+        var start;
+        var t;
+        var y;
+        var cancelScroll = function () {
+            abort();
+        };
+
+        // abort if already in progress or nothing to scroll
+        if (smoothScrollInProgress) {
+            return;
+        }
+
+        if (delta === 0) {
+            return;
+        }
+
+        // quint ease-in-out smoothing, from
+        // https://github.com/madrobby/scripty2/blob/master/src/effects/transitions/penner.js#L127-L136
+
+        function smooth(pos) {
+            if ((pos /= 0.5) < 1) {
+                return 0.5 * Math.pow(pos, 5);
+            }
+
+            return 0.5 * (Math.pow((pos - 2), 5) + 2);
+        }
+
+        function abort() {
+            $this.off('touchstart.smoothscroll', cancelScroll);
+            smoothScrollInProgress = false;
+        }
+
+        // when there's a touch detected while scrolling is in progress, abort
+        // the scrolling (emulates native scrolling behavior)
+        $this.on('touchstart.smoothscroll', cancelScroll);
+        smoothScrollInProgress = true;
+
+        // start rendering away! note the function given to frame
+        // is named "render" so we can reference it again further down
+
+        function render(now) {
+            if (!smoothScrollInProgress) {
+                return;
+            }
+            if (!start) {
+                start = now;
+            }
+
+            // calculate t, position of animation in [0..1]
+            t = Math.min(1, Math.max((now - start) / speed, 0));
+            // calculate the new scrollTop position (don't forget to smooth)
+            y = Math.round(initialY + delta * smooth(t));
+            // bracket scrollTop so we're never over-scrolling
+            if (delta > 0 && y > targetY) {
+                y = targetY;
+            }
+            if (delta < 0 && y < targetY) {
+                y = targetY;
+            }
+
+            // only actually set scrollTop if there was a change fromt he last frame
+            if (lastY != y) {
+                $this.scrollTop(y);
+            }
+
+            lastY = y;
+            // if we're not done yet, queue up an other frame to render,
+            // or clean up
+            if (y !== targetY) {
+                cAF(scrollRAF);
+                scrollRAF = rAF(render);
+            } else {
+                cAF(scrollRAF);
+                abort();
+            }
+        }
+
+        var scrollRAF = rAF(render);
+    };
+
+    SmoothScroll.DEFAULTS = {
+        position: 0
+    };
+
+    $.fn.smoothScroll = function (option) {
+        return this.each(function () {
+            new SmoothScroll(this, option);
+        });
+    };
+
+    // Init code
+    $(document).on('click.smoothScroll', '[data-smooth-scroll]', function (e) {
+        e.preventDefault();
+        var options = UI.utils.options($(this).data('SmoothScroll'));
+        $(window).smoothScroll(options);
+    });
+
 })(jQuery);// todo 增加分页参数
 
 /*
@@ -7399,6 +7671,15 @@ $(function () {
     $('[data-back]').on('click', function () {
         window.history.go(-1);
         return false;
+    });
+
+    echo.init({
+        offset: 100,
+        throttle: 250,
+        unload: false,
+        callback: function (element, op) {
+           
+        }
     });
 
     // $('.wishlist-label').on('click', function(){
