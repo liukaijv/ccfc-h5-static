@@ -37,6 +37,273 @@
             return date.getFullYear() + '-' + formatNumber(date.getMonth() + 1, 2) + '-' + formatNumber(date.getDate(), 2);
         };
 
+    var mockData = {
+        "2015-12-14": {
+            "price": "0.01",
+            "childprice": "0.01",
+            "line_id": 42,
+            "stock": "100"
+        },
+        "2015-12-15": {
+            "price": "0.01",
+            "childprice": "0.01",
+            "line_id": 42,
+            "stock": "100"
+        },
+        "2015-12-16": {
+            "price": "0.01",
+            "childprice": "0.01",
+            "line_id": 42,
+            "stock": "100"
+        },
+        "2015-12-17": {
+            "price": "0.01",
+            "childprice": "0.01",
+            "line_id": 42,
+            "stock": "100"
+        },
+        "2015-12-18": {
+            "price": "0.01",
+            "childprice": "0.01",
+            "line_id": 42,
+            "stock": "100"
+        },
+        "2015-12-19": {
+            "price": "0.01",
+            "childprice": "0.01",
+            "line_id": 42,
+            "stock": "100"
+        },
+        "2015-12-20": {
+            "price": "0.01",
+            "childprice": "0.01",
+            "line_id": 42,
+            "stock": "100"
+        },
+        "2015-08-21": {
+            "price": "0.01",
+            "childprice": "0.01",
+            "line_id": 42,
+            "stock": "100"
+        },
+        "2015-12-22": {
+            "price": "0.01",
+            "childprice": "0.01",
+            "line_id": 42,
+            "stock": "100"
+        },
+        "2015-12-23": {
+            "price": "0.01",
+            "childprice": "0.01",
+            "line_id": 42,
+            "stock": "100"
+        },
+        "2015-12-24": {
+            "price": "0.01",
+            "childprice": "0.01",
+            "line_id": 42,
+            "stock": "100"
+        },
+        "2015-12-25": {
+            "price": "0.01",
+            "childprice": "0.01",
+            "line_id": 42,
+            "stock": "100"
+        },
+        "2015-12-26": {
+            "price": "0.01",
+            "childprice": "0.01",
+            "line_id": 42,
+            "stock": "100"
+        },
+        "2015-12-27": {
+            "price": "0.01",
+            "childprice": "0.01",
+            "line_id": 42,
+            "stock": "100"
+        },
+        "2015-12-28": {
+            "price": "0.01",
+            "childprice": "0.01",
+            "line_id": 42,
+            "stock": "100"
+        },
+        "2015-12-29": {
+            "price": "0.01",
+            "childprice": "0.01",
+            "line_id": 42,
+            "stock": "100"
+        },
+        "2015-12-30": {
+            "price": "0.01",
+            "childprice": "0.01",
+            "line_id": 42,
+            "stock": "100"
+        },
+        "2015-12-31": {
+            "price": "0.01",
+            "childprice": "0.01",
+            "line_id": 42,
+            "stock": "100"
+        },
+        "2016-01-01": {
+            "price": "0.01",
+            "childprice": "0.01",
+            "line_id": 42,
+            "stock": "100"
+        },
+        "2016-01-02": {
+            "price": "0.01",
+            "childprice": "0.01",
+            "line_id": 42,
+            "stock": "100"
+        },
+        "2016-01-03": {
+            "price": "0.01",
+            "childprice": "0.01",
+            "line_id": 42,
+            "stock": "100"
+        },
+        "2016-01-04": {
+            "price": "0.01",
+            "childprice": "0.01",
+            "line_id": 42,
+            "stock": "100"
+        },
+        "2015-09-05": {
+            "price": "0.01",
+            "childprice": "0.01",
+            "line_id": 42,
+            "stock": "100"
+        },
+        "2015-09-06": {
+            "price": "0.01",
+            "childprice": "0.01",
+            "line_id": 42,
+            "stock": "100"
+        },
+        "2015-09-07": {
+            "price": "0.01",
+            "childprice": "0.01",
+            "line_id": 42,
+            "stock": "100"
+        },
+        "2015-09-08": {
+            "price": "0.01",
+            "childprice": "0.01",
+            "line_id": 42,
+            "stock": "100"
+        },
+        "2015-09-09": {
+            "price": "0.01",
+            "childprice": "0.01",
+            "line_id": 42,
+            "stock": "100"
+        },
+        "2015-09-10": {
+            "price": "0.01",
+            "childprice": "0.01",
+            "line_id": 42,
+            "stock": "100"
+        },
+        "2015-09-11": {
+            "price": "0.01",
+            "childprice": "0.01",
+            "line_id": 42,
+            "stock": "100"
+        },
+        "2015-09-12": {
+            "price": "0.01",
+            "childprice": "0.01",
+            "line_id": 42,
+            "stock": "100"
+        },
+        "2015-09-13": {
+            "price": "0.01",
+            "childprice": "0.01",
+            "line_id": 42,
+            "stock": "100"
+        },
+        "2015-09-14": {
+            "price": "0.01",
+            "childprice": "0.01",
+            "line_id": 42,
+            "stock": "100"
+        },
+        "2015-09-15": {
+            "price": "0.01",
+            "childprice": "0.01",
+            "line_id": 42,
+            "stock": "100"
+        },
+        "2015-09-16": {
+            "price": "0.01",
+            "childprice": "0.01",
+            "line_id": 42,
+            "stock": "100"
+        },
+        "2015-09-17": {
+            "price": "0.01",
+            "childprice": "0.01",
+            "line_id": 42,
+            "stock": "100"
+        },
+        "2015-09-18": {
+            "price": "0.01",
+            "childprice": "0.01",
+            "line_id": 42,
+            "stock": "100"
+        },
+        "2015-09-19": {
+            "price": "0.01",
+            "childprice": "0.01",
+            "line_id": 42,
+            "stock": "100"
+        },
+        "2015-09-20": {
+            "price": "0.01",
+            "childprice": "0.01",
+            "line_id": 42,
+            "stock": "100"
+        },
+        "2015-09-21": {
+            "price": "0.01",
+            "childprice": "0.01",
+            "line_id": 42,
+            "stock": "100"
+        },
+        "2015-09-22": {
+            "price": "0.01",
+            "childprice": "0.01",
+            "line_id": 42,
+            "stock": "100"
+        },
+        "2015-09-23": {
+            "price": "0.01",
+            "childprice": "0.01",
+            "line_id": 42,
+            "stock": "100"
+        },
+        "2015-09-24": {
+            "price": "0.01",
+            "childprice": "0.01",
+            "line_id": 42,
+            "stock": "100"
+        },
+        "2015-09-25": {
+            "price": "0.01",
+            "childprice": "0.01",
+            "line_id": 42,
+            "stock": "100"
+        },
+        "2015-09-26": {
+            "price": "0.01",
+            "childprice": "0.01",
+            "line_id": 42,
+            "stock": "100"
+        }
+    };
+
 
     var Calendar = function (element, options) {
         this.$el = $(element);
@@ -45,17 +312,20 @@
         this.maxDate = this._options.maxDate;
         this.date = this._options.date || new Date();
         this.iscroll = null;
+        this.lastDate = new Date();
+        this.pageIndex = 0;
         this.init();
     }
 
     Calendar.DEFAULTS = {
         date: null, // 初始化日期
-        firstDay: 1, // 一周从星期几开始
+        firstDay: 0, // 一周从星期几开始
         minDate: null, // 最小日期
         maxDate: null, // 最大日期
         canSwipe: true,// 是否可滑动加载一个月
         perPage: 5,
-        datePrice: null
+        totalPage: 12,
+        datePrice: null,
     }
 
     Calendar.prototype = {
@@ -75,7 +345,9 @@
 
             var el = this.$el,
                 cell,
-                date;
+                date,
+                _this = this,
+                opts = this._options;
 
             $(document).on('click', '.cc-calendar-calendar tbody a', function (e) {
                 var me = $(this);
@@ -90,8 +362,95 @@
                 me.addClass('cc-active');
             });
 
-            // this.iscroll = new iScroll(el.find('.cc-calendar-content').get(0));                              
+            this.iscroll = new iScroll(el.find('.cc-calendar-content').get(0), $.extend({
+                useTransition: true,
+                speedScale: 1,
+                topOffset: 0
+            }, {
+                onScrollStart: function (e) {
+                    //el.trigger('scrollstart', e);
+                },
+                onScrollMove: function (e) {
 
+                    if (this.y < (this.maxScrollY - 50) && _this.pageIndex < opts.totalPage) {
+                        console.log(formatDate(_this.lastDate));
+                        _this.loadMonthData(_this.lastDate, opts.perPage, mockData);
+                    }
+                    //el.trigger('scrollmove', e);
+
+                },
+                onScrollEnd: function (e) {
+                    //el.trigger('scrollend', e);
+                    _this.refresh();
+                }
+            }));
+
+        },
+
+        loadMonthData: function (date, amount, priceData) {
+            var opts = this._options,
+                tempDate = date,
+                nowYear = tempDate.getFullYear(),
+                nowMonth = tempDate.getMonth(),
+                today = new Date(),
+                renderDate,
+                drawYear,
+                drawMonth,
+                minDate = this.minDate,
+                maxDate = this.maxDate,
+                selectedDate = this.date,
+                html = '',
+                i,
+                j,
+                firstDay,
+                leadDays,
+                daysInMonth,
+                rows,
+                printDate,
+                k;
+
+            //console.log(nowMonth);
+
+            firstDay = (isNaN(firstDay = parseInt(opts.firstDay, 10)) ? 0 : firstDay);
+
+
+            // 一次显示多少个月？
+
+            this.lastDate = new Date(nowYear, nowMonth + amount, 1);
+            this.pageIndex += amount;
+
+            for (k = 0; k < amount; k++) {
+
+                renderDate = new Date(nowYear, nowMonth + k, 1);
+
+                drawYear = renderDate.getFullYear();
+                drawMonth = renderDate.getMonth();
+
+                html += '<tr>' +
+                    '<td colspan="7">' + this._renderHead(drawYear, drawMonth) + '</td></tr>';
+
+                daysInMonth = getDaysInMonth(drawYear, drawMonth);
+                leadDays = (getFirstDayOfMonth(drawYear, drawMonth) - firstDay + 7) % 7;
+                rows = Math.ceil((leadDays + daysInMonth) / 7);
+                printDate = new Date(drawYear, drawMonth, 1 - leadDays);
+
+                for (i = 0; i < rows; i++) {
+                    html += '<tr>';
+
+                    for (j = 0; j < 7; j++) {
+                        html += this._renderDay(j, printDate, firstDay, drawMonth, selectedDate, today, minDate, maxDate, priceData);
+                        printDate.setDate(printDate.getDate() + 1);
+                    }
+                    html += '</tr>';
+                }
+
+            }
+
+            this.$el.find('.cc-calendar-calendar').append(html);
+            this.refresh();
+        },
+        refresh: function () {
+            this.iscroll.refresh();
         },
 
         // 输出日期
@@ -102,7 +461,9 @@
                 nowMonth = tempDate.getMonth(),
                 today = new Date(tempDate.getFullYear(), tempDate.getMonth(),
                     tempDate.getDate()),
-
+                renderDate,
+                drawYear,
+                drawMonth,
                 minDate = this.minDate,
                 maxDate = this.maxDate,
                 selectedDate = this.date,
@@ -116,6 +477,8 @@
                 rows,
                 printDate,
                 k;
+
+            //console.log(nowMonth);
 
             firstDay = (isNaN(firstDay = parseInt(opts.firstDay, 10)) ? 0 : firstDay);
 
@@ -135,6 +498,10 @@
 
 
             // 一次显示多少个月？
+
+            this.lastDate = new Date(nowYear, nowMonth + amount, 1);
+            this.pageIndex += amount;
+
             for (k = 0; k < amount; k++) {
 
                 renderDate = new Date(nowYear, nowMonth + k, 1);
@@ -169,10 +536,10 @@
         },
 
         // 显示价格
-        _renderPrice: function (printDate) {
+        _renderPrice: function (printDate, priceData) {
 
             var opts = this._options,
-                datePrice = opts.datePrice,
+                datePrice = priceData || opts.datePrice,
                 date,
                 output = '';
 
@@ -194,7 +561,7 @@
 
         // 年月
         _renderHead: function (drawYear, drawMonth) {
-            var html = '<div class="cc-calendar-header">';
+            var html = '<div class="cc-calendar-header" data-date="' + drawYear + '-' + drawMonth + '-1">';
 
             html += '<span class="cc-calendar-year" data-value="' + drawYear + '">' + drawYear + '年' + '</span>';
 
@@ -204,13 +571,13 @@
         },
 
         // 每天
-        _renderDay: function (j, printDate, firstDay, drawMonth, selectedDate, today, minDate, maxDate) {
+        _renderDay: function (j, printDate, firstDay, drawMonth, selectedDate, today, minDate, maxDate, priceData) {
 
             var otherMonth = (printDate.getMonth() !== drawMonth),
                 unSelectable, priceDisplay;
 
             // 是否有价格
-            priceDisplay = this._renderPrice(printDate);
+            priceDisplay = this._renderPrice(printDate, priceData);
             unSelectable = otherMonth || (minDate && printDate < minDate) || (maxDate && printDate > maxDate) || !priceDisplay;
 
             return "<td class='" + ((j + firstDay + 6) % 7 >= 5 ? "cc-calendar-week-end" : "") + // 标记周末
@@ -235,11 +602,15 @@
         return this.each(function () {
             var $this = $(this);
             var data = $this.data('calendar');
-            var options = $.extend({},
-                Calendar.DEFAULTS, typeof option == 'object' && option);
+            var options = $.extend({}, Calendar.DEFAULTS,
+                typeof option == 'object' && option);
 
             if (!data) {
                 $this.data('calendar', (data = new Calendar(this, options)));
+            }
+
+            if (typeof option == 'string') {
+                data[option] && data[option]();
             }
 
         });

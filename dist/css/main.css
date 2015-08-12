@@ -1550,6 +1550,43 @@ img {
     background-size: 80px 45px;
   }
 }
+.cc-top {
+  cursor: pointer;
+  width: 4.4rem;
+  height: 4.4rem;
+  position: fixed;
+  bottom: 1rem;
+  right: 1rem;
+  z-index: 110;
+  background-color: rgba(0, 0, 0, 0.6);
+  border-radius: 50%;
+  text-align: center;
+  line-height: 5.2rem;
+  overflow: hidden;
+  color: rgba(255, 255, 255, 0.8);
+  opacity: 0;
+  -webkit-transition: opacity 0.3s;
+  -moz-transition: opacity 0.3s;
+  transition: opacity 0.3s;
+}
+.cc-top.cc-active {
+  opacity: 1;
+}
+.cc-top .arrow {
+  position: absolute;
+  left: 50%;
+  margin-left: -0.6rem;
+  top: 1rem;
+  display: inline-block;
+  width: 1.2rem;
+  height: 1.2rem;
+  border: rgba(255, 255, 255, 0.8) solid;
+  border-width: 0.2rem 0.2rem 0 0;
+  -webkit-transform: rotate(-45deg);
+  -ms-transform: rotate(-45deg);
+  transform: rotate(-45deg);
+  min-width: auto;
+}
 .cc-tabs-nav {
   margin: 0;
   padding: 0;
@@ -2101,6 +2138,11 @@ img {
   padding: .5rem;
   text-align: center;
   line-height: 2.5rem;
+}
+.cc-calendar-content {
+  position: absolute;
+  top: 7.9rem;
+  bottom: 0;
 }
 .cc-calendar-header {
   text-align: center;

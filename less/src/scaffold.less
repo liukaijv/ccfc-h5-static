@@ -186,9 +186,37 @@
   }
 }
 
-.@{ns}bg{
+.@{ns}bg {
   background-repeat: no-repeat;
   background-position: center;
   .retina-bg('../images/bg.png', 80px, 45px);
   background-color: #e6e5e5;
+}
+
+.@{ns}top {
+  cursor: pointer;
+  width: 4.4rem;
+  height: 4.4rem;
+  position: fixed;
+  bottom: 1rem;
+  right: 1rem;
+  z-index: @maskIndex + 10;
+  background-color: rgba(0, 0, 0, .6);
+  border-radius: 50%;
+  text-align: center;
+  line-height: 5.2rem;
+  overflow: hidden;
+  color:rgba(255,255,255,.8);
+  opacity: 0;
+  .transition(opacity .3s);
+  &.@{ns}active{
+    opacity: 1;
+  }
+  .arrow{
+    position: absolute;
+    left: 50%;
+    margin-left: -.6rem;
+    top:1rem;
+    .arrow(rgba(255,255,255,.8), 1.2rem ,.2rem, -45deg);
+  }
 }

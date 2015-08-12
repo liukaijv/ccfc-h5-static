@@ -120,10 +120,9 @@
         return this.each(function () {
             new SmoothScroll(this, option);
         });
-    };
+    }
 
-    // Init code
-    $(document).on('click.smoothScroll', '[data-smooth-scroll]', function (e) {
+    $(document).on('click.smoothScroll', '[data-role="gotop"]', function (e) {
         e.preventDefault();
         var options = UI.utils.options($(this).data('SmoothScroll'));
         $(window).smoothScroll(options);
