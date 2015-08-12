@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no, minimal-ui">
+    <title>cczc webapp</title>
+    <!-- 其它的meta标签后面再加 -->
+    <!-- <link rel="stylesheet" href="css/amazeui.min.css" /> -->
+    <link rel="stylesheet" href="css/font-awesome.min.css"/>
+    <link rel="stylesheet" href="css/main.min.css"/>
+    <script src="js/vendors/jquery/jquery.min.js"></script>
+    <script src="js/main.js"></script>
+</head>
+<body>
+
+<header class="cc-header">
+    <a href="#" class="cc-back" data-back></a>
+
+    <h2 class="cc-title">旅行线路产品列表</h2>
+</header>
+
+<div class="goods-slider">
+  <span class="wishlist-label">
+    <i class="icon icon-heart-o"></i>
+  </span>
+
+    <div class="swipe" data-role="swipe" data-role="pureview">
+        <ul class="swipe-wrap">
+            <li>
+                <a href="#">
+                    <img src="images/img640x390.png" alt="远方 有一个地方 那里种有我们的梦想">
+                </a>
+            </li>
+            <li>
+                <a href="#">
+                    <img src="images/img640x390.png" alt="远方 有一个地方 那里种有我们的梦想">
+                </a>
+            </li>
+        </ul>
+    </div>
+</div>
+
+<div class="goods-info">
+
+    <div class="goods-name">成都-九寨沟-黄龙3天2晚双汽跟团游</div>
+
+    <div class="clearfix m10">
+        <div class="left">
+            <div class="cc-score">
+                <div style="width:100%;"></div>
+            </div>
+            <div class="inline-block">
+                已售<span class="color-pink">27</span>份
+            </div>
+        </div>
+        <div class="right">
+            <span class="color-pink">￥<span class="f20">300</span></span>起
+        </div>
+    </div>
+
+    <div class="clearfix m10">
+        <div class="left">
+            成都/重庆出发
+        </div>
+        <div class="right line-through">
+            ￥600
+        </div>
+    </div>
+
+    <div class="goods-tags">
+        <i class="icon icon-tag"></i>
+        <a href="#" class="color-purple">标签1</a>
+        <a href="#" class="color-pink">标签2</a>
+        <a href="#" class="color-green">标签3</a>
+        <a href="#" class="color-blue">标签4</a>
+    </div>
+</div>
+
+<div class="divider-gutter"></div>
+
+<ul class="cc-list">
+    <li>
+        <div class="list-inner flex-row flex-middle">
+            <div class="flex">情侣套餐（2人）</div>
+            <div class="color-pink">￥500</div>
+            <a href="#" class="btn disabled">售罄</a>
+        </div>
+    </li>
+    <li>
+        <div class="list-inner flex-row flex-middle">
+            <div class="flex">家庭亲子套餐（2成人1儿童）</div>
+            <div class="color-pink">￥800</div>
+            <a href="#" class="btn-primary">抢购</a>
+        </div>
+    </li>
+</ul>
+
+<div class="divider-gutter"></div>
+
+<ul class="cc-list">
+    <li>
+        <div class="list-inner">
+            <span class="grayDark">更多优惠</span>
+      <span class="ml10" data-switcher={connect:'#promotion-activity'}>    
+        <a href="#" class="btn-yellow sm">优惠券</a>
+        <a href="#" class="btn-yellow sm">5.0折</a>
+      </span>
+        </div>
+    </li>
+</ul>
+<ul class="cc-list">
+    <li class="promotion-activity" id="promotion-activity">
+        <div class="hide" data-switcher-item="reset">
+            <a href="#" class="btn-yellow sm">优惠券</a>
+            <span class="grayDark ml10">使用即享受折扣立减</span>
+        </div>
+        <div class="hide" data-switcher-item="reset">
+            <a href="#" class="btn-yellow sm">5.0折</a>
+            <span class="grayDark ml10">五折优惠</span>
+        </div>
+    </li>
+</ul>
+
+<div class="divider-gutter"></div>
+
+<div class="cc-tabs bg-white">
+
+    <ul class="cc-tabs-nav" data-role="tabs">
+        <li>
+            <a href="#detail">商品详情</a>
+        </li>
+        <li>
+            <a href="#routing">行程概览</a>
+        </li>
+        <li>
+            <a href="#intro">房车介绍</a>
+        </li>
+    </ul>
+
+
+    <div class="cc-tabs-content">
+
+        <div class="cc-tabs-panel" id="detail">
+
+            <div class="p10">
+                这里是商品详情文字介绍，描述一段文字。这里是商品详情文字介绍，描述一段文字。
+                这里是商品详情文字介绍，描述一段文字。这里是商品详情文字介绍，描述一段文字。
+                这里是商品详情文字介绍，描述一段文字。这里是商品详情文字介绍，描述一段文字。
+                这里是商品详情文字介绍，描述一段文字。这里是商品详情文字介绍，描述一段文字。
+                <ul class="media-list3" data-role="pureview">
+                    <li>
+                        <a href="#">
+                            <img src="images/img640x390.png" alt="这里是商品详情文字介绍">
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <img src="images/img640x390.png" alt="描述一段文字">
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <img src="images/img640x390.png" alt="这里是商品详情文字介绍">
+                        </a>
+                    </li>
+                </ul>
+            </div>
+
+        </div>
+
+        <div class="cc-tabs-panel" id="routing">
+
+            <div class="daily-route">
+
+                <div class="daily-route-item">
+                    <div class="day-label">D1</div>
+                    <div class="daily-route-inner">
+                        <h3 class="daily-route-title">成都-武侯祠-锦里-桃花沟</h3>
+
+                        <div class="daily-route-description">
+                            这里是商品详情文字介绍，描述一段文字。这里是商品详情文字介绍，描述一段文字。
+                        </div>
+                        <ul class="media-list3" data-role="pureview">
+                            <li>
+                                <a href="#">
+                                    <img src="images/img640x390.png" alt="这里是商品详情文字介绍">
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <img src="images/img640x390.png" alt="描述一段文字">
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <img src="images/img640x390.png" alt="这里是商品详情文字介绍">
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="daily-route-item">
+                    <div class="day-label">D2</div>
+                    <div class="daily-route-inner">
+                        <h3 class="daily-route-title">桃花头-洛带-枇杷沟-三花次</h3>
+
+                        <div class="daily-route-description">
+                            这里是商品详情文字介绍，描述一段文字。这里是商品详情文字介绍，描述一段文字。
+                        </div>
+                    </div>
+                </div>
+
+                <div class="daily-route-item">
+                    <div class="day-label">D3</div>
+                    <div class="daily-route-inner">
+                        <h3 class="daily-route-title">成都-武侯祠-锦里-桃花沟</h3>
+
+                        <div class="daily-route-description">
+                            这里是商品详情文字介绍，描述一段文字。这里是商品详情文字介绍，描述一段文字。
+                        </div>
+                        <ul class="media-list3" data-role="pureview">
+                            <li>
+                                <a href="#">
+                                    <img src="images/img640x390.png" alt="这里是商品详情文字介绍">
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <img src="images/img640x390.png" alt="描述一段文字">
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <img src="images/img640x390.png" alt="这里是商品详情文字介绍">
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+
+        <div class="cc-tabs-panel" id="intro">
+            <div class="m10">
+                这里是商品详情文字介绍，描述一段文字。这里是商品详情文字介绍，描述一段文字。
+                这里是商品详情文字介绍，描述一段文字。这里是商品详情文字介绍，描述一段文字。
+
+                <div class="divider-solid mt10"></div>
+                <div class="related-facility">
+                    <h3>房车标配物品</h3>
+                    <ul>
+                        <li>
+                            <i class="icon icon-check color-green"></i>
+                            项目1
+                        </li>
+                        <li>
+                            <i class="icon icon-times color-pink"></i>
+                            项目1
+                        </li>
+                        <li>
+                            <i class="icon icon-check color-green"></i>
+                            项目1
+                        </li>
+                        <li>
+                            <i class="icon icon-times color-pink"></i>
+                            项目1
+                        </li>
+                        <li>
+                            <i class="icon icon-check color-green"></i>
+                            项目1
+                        </li>
+                        <li>
+                            <i class="icon icon-times color-pink"></i>
+                            项目1
+                        </li>
+                    </ul>
+                </div>
+
+            </div>
+        </div>
+
+    </div>
+
+</div>
+
+<div class="divider-gutter"></div>
+
+<div class="fixed-placeholer"></div>
+<div class="fixed-btns">
+    <a href="#" class="goods-reserve-btn">
+        <i class="icon icon-pencil-square-o"></i>
+        预定行程
+    </a>
+</div>
+
+</body>
+</html>

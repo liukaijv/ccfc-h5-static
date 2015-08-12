@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no, minimal-ui">
+    <title>cczc webapp</title>
+    <!-- 其它的meta标签后面再加 -->
+    <!-- <link rel="stylesheet" href="css/amazeui.min.css" /> -->
+    <link rel="stylesheet" href="css/font-awesome.min.css"/>
+    <link rel="stylesheet" href="css/main.min.css"/>
+    <script src="js/vendors/jquery/jquery.min.js"></script>
+    <script src="js/main.min.js"></script>
+</head>
+<body>
+
+<header class="cc-header">
+    <a href="#" class="cc-back" data-back></a>
+
+    <h2 class="cc-title">旅行线路产品列表</h2>
+</header>
+
+<div class="cc-hscroller cc-header-secondary" data-role="hscroller">
+    <div class="left">
+        <ul class="cc-navigator-list">
+            <li class="cc-active">
+                <a href="#">全部</a>
+            </li>
+            <li>
+                <a href="#">成都</a>
+            </li>
+            <li>
+                <a href="#">重庆</a>
+            </li>
+            <li>
+                <a href="#">桂林</a>
+            </li>
+            <li>
+                <a href="#">丽江</a>
+            </li>
+            <li>
+                <a href="#">三亚</a>
+            </li>
+            <li>
+                <a href="#cityPanel" data-role="panel">
+                    <i class="icon icon-ellipsis-v"></i>
+                </a>
+            </li>
+        </ul>
+    </div>
+</div>
+
+<div class="list-block bg-gray">
+
+    <ul class="route-list">
+        <li>
+
+            <div class="goods-media">
+                <a href="route-view.html">
+                    <img src="images/img640x390.png" alt="远方 有一个地方 那里种有我们的梦想">
+                </a>
+        <span class="activity-label">
+          优惠劵
+        </span>
+        <span class="wishlist-label">
+          <i class="icon icon-heart-o"></i>
+        </span>
+            </div>
+
+            <div class="goods-info">
+
+                <div class="goods-name">成都-九寨沟-黄龙3天2晚双汽跟团游</div>
+
+                <div class="clearfix m10">
+                    <div class="left">
+                        <div class="cc-score">
+                            <div style="width:100%;"></div>
+                        </div>
+                        <div class="inline-block">
+                            已售<span class="color-pink">27</span>份
+                        </div>
+                        <div class="mt5">
+                            成都/重庆出发
+                        </div>
+                    </div>
+                    <div class="right mt10">
+                        <span class="color-pink">￥<span class="f20">300</span></span>起
+                    </div>
+                </div>
+
+                <div class="clearfix m10">
+                    <div class="left">
+                        <span class="color-gray">出发日期：</span>6.2/6.5/6.8/6.9...
+                    </div>
+                    <div class="right line-through">
+                        ￥600
+                    </div>
+                </div>
+
+            </div>
+        </li>
+        <li>
+
+            <div class="goods-media">
+                <a href="route-view.html">
+                    <img src="images/img640x390.png" alt="远方 有一个地方 那里种有我们的梦想">
+                </a>
+        <span class="activity-label">
+          优惠劵
+        </span>
+        <span class="wishlist-label cc-active">
+          <i class="icon icon-heart-o"></i>
+        </span>
+            </div>
+
+            <div class="goods-info">
+
+                <div class="goods-name">成都-九寨沟-黄龙3天2晚双汽跟团游</div>
+
+                <div class="clearfix m10">
+                    <div class="left">
+                        <div class="cc-score">
+                            <div style="width:100%;"></div>
+                        </div>
+                        <div class="inline-block">
+                            已售<span class="color-pink">27</span>份
+                        </div>
+                        <div class="mt5">
+                            成都/重庆出发
+                        </div>
+                    </div>
+                    <div class="right mt10">
+                        <span class="color-pink">￥<span class="f20">300</span></span>起
+                    </div>
+                </div>
+
+                <div class="clearfix m10">
+                    <div class="left">
+                        <span class="color-gray">出发日期：</span>6.2/6.5/6.8/6.9...
+                    </div>
+                    <div class="right line-through">
+                        ￥600
+                    </div>
+                </div>
+
+            </div>
+        </li>
+    </ul>
+
+</div>
+
+<div class="cc-panel" id="cityPanel">
+    <div class="cc-panel-content cc-panel-flip bg-gray">
+
+        <header class="cc-header">
+            <a href="#" class="cc-back" data-panel="close"></a>
+
+            <h2 class="cc-title">选择出发城市</h2>
+        </header>
+
+        <ul class="city-list">
+            <li class="item-header">
+                <i class="icon icon-map-marker"></i>
+                定位到当前城市
+            </li>
+            <li>
+                <a href="#" class="list-inner">
+                    <span>重庆</span>
+                    Chong Qing
+                </a>
+            </li>
+            <li>
+                <a href="#" class="list-inner">
+                    <span>成都</span>
+                    Cheng Du
+                </a>
+            </li>
+            <li>
+                <a href="#" class="list-inner">
+                    <span>桂林</span>
+                    Gui Lin
+                </a>
+            </li>
+            <li>
+                <a href="#" class="list-inner">
+                    <span>丽江</span>
+                    Li Jiang
+                </a>
+            </li>
+            <li>
+                <a href="#" class="list-inner">
+                    <span>三亚</span>
+                    San Ya
+                </a>
+            </li>
+        </ul>
+
+    </div>
+</div>
+
+</body>
+</html>

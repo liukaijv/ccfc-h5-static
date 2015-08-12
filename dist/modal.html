@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no, minimal-ui">
+    <title>cczc webapp</title>
+    <!-- 其它的meta标签后面再加 -->
+    <!-- <link rel="stylesheet" href="css/amazeui.min.css" /> -->
+    <link rel="stylesheet" href="css/font-awesome.min.css"/>
+    <link rel="stylesheet" href="css/main.min.css"/>
+    <script src="js/vendors/jquery/jquery.min.js"></script>
+    <script src="js/main.min.js"></script>
+    <script>
+        $(function () {
+
+            $('#alert').on('click', function () {
+                $.alert('我是弹出内容');
+            });
+
+            $('#confirm').on('click', function () {
+                $.confirm('我是弹出内容');
+            });
+
+            $('#prompt').on('click', function () {
+                $.prompt('我是弹出内容');
+            });
+
+            $('#dialog').on('click', function () {
+                $.dialog('我是弹出内容', {
+                    '去意已决': function (dialog) {
+                        $.notify('去意已决');
+                    },
+                    '我在想想': function (dialog) {
+                        $.notify('我在想想');
+                    }
+                });
+            });
+
+        })
+    </script>
+</head>
+<body>
+
+<header class="cc-header">
+    <a href="#" class="cc-back"></a>
+
+    <h2 class="cc-title">弹出框</h2>
+</header>
+
+<div class="m15">
+
+    <div class="mt10">
+        <a href="#" id="alert" class="btn-primary btn-fill">alert</a>
+    </div>
+
+    <div class="mt10">
+        <a href="#" id="confirm" class="btn-primary btn-fill">confirm</a>
+    </div>
+
+    <div class="mt10">
+        <a href="#" id="prompt" class="btn-primary btn-fill">prompt</a>
+    </div>
+
+    <div class="mt10">
+        <a href="#" id="dialog" class="btn-primary btn-fill">dialog</a>
+    </div>
+
+</div>
+
+
+</body>
+</html>
