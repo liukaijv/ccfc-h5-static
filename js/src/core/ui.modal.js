@@ -253,15 +253,14 @@
             modal = $('#alertModal')
         }
 
-        modal.find('.cc-modal-header').html(typeof title === 'undefined' ? '提示信息' : title);
+        modal.find('.cc-modal-header').html(typeof title === 'undefined' ? '' : title);
         modal.find('.cc-modal-content').html(text || '');
 
         return modal.modal({
             cancelable: false,
-            onConfirm: function () {
-                modal.remove();
+            onConfirm: function () {                
                 $.isFunction(callbackOk) && callbackOk.call(this);
-                this.close();
+                modal.remove();
             }
         });
 
@@ -290,16 +289,18 @@
             modal = $('#confirmModal')
         }
 
-        modal.find('.cc-modal-header').html(typeof title === 'undefined' ? '提示信息' : title);
+        modal.find('.cc-modal-header').html(typeof title === 'undefined' ? '' : title);
         modal.find('.cc-modal-content').html(text || '');
 
         return modal.modal({
             cancelable: false,
-            onConfirm: function () {
+            onConfirm: function () {                
                 $.isFunction(callbackOk) && callbackOk.call(this);
+                modal.remove();
             },
-            onCancel: function () {
+            onCancel: function () {                
                 $.isFunction(callbackCancel) && callbackCancel.call(this);
+                modal.remove();
             }
         });
 
@@ -329,16 +330,18 @@
             modal = $('#promptModal')
         }
 
-        modal.find('.cc-modal-header').html(typeof title === 'undefined' ? '提示信息' : title);
+        modal.find('.cc-modal-header').html(typeof title === 'undefined' ? '' : title);
         modal.find('.cc-modal-content .modal-prompt-text').html(text || '');
 
         return modal.modal({
             cancelable: false,
             onConfirm: function (val) {
                 $.isFunction(callbackOk) && callbackOk.call(this);
+                modal.remove();
             },
             onCancel: function (val) {
                 $.isFunction(callbackCancel) && callbackCancel.call(this);
+                modal.remove();
             }
         });
     };
@@ -369,7 +372,7 @@
         }
 
         var dafaults = {
-            title: title ? title : '提示信息',
+            title: title ? title : '',
             content: typeof text === 'string' ? text : '',
             btns: btns ? btns : {
                 '取消': function (dialog) {

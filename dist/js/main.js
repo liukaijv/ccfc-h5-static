@@ -4711,15 +4711,14 @@ $(function () {
             modal = $('#alertModal')
         }
 
-        modal.find('.cc-modal-header').html(typeof title === 'undefined' ? '提示信息' : title);
+        modal.find('.cc-modal-header').html(typeof title === 'undefined' ? '' : title);
         modal.find('.cc-modal-content').html(text || '');
 
         return modal.modal({
             cancelable: false,
-            onConfirm: function () {
-                modal.remove();
+            onConfirm: function () {                
                 $.isFunction(callbackOk) && callbackOk.call(this);
-                this.close();
+                modal.remove();
             }
         });
 
@@ -4748,16 +4747,18 @@ $(function () {
             modal = $('#confirmModal')
         }
 
-        modal.find('.cc-modal-header').html(typeof title === 'undefined' ? '提示信息' : title);
+        modal.find('.cc-modal-header').html(typeof title === 'undefined' ? '' : title);
         modal.find('.cc-modal-content').html(text || '');
 
         return modal.modal({
             cancelable: false,
-            onConfirm: function () {
+            onConfirm: function () {                
                 $.isFunction(callbackOk) && callbackOk.call(this);
+                modal.remove();
             },
-            onCancel: function () {
+            onCancel: function () {                
                 $.isFunction(callbackCancel) && callbackCancel.call(this);
+                modal.remove();
             }
         });
 
@@ -4787,16 +4788,18 @@ $(function () {
             modal = $('#promptModal')
         }
 
-        modal.find('.cc-modal-header').html(typeof title === 'undefined' ? '提示信息' : title);
+        modal.find('.cc-modal-header').html(typeof title === 'undefined' ? '' : title);
         modal.find('.cc-modal-content .modal-prompt-text').html(text || '');
 
         return modal.modal({
             cancelable: false,
             onConfirm: function (val) {
                 $.isFunction(callbackOk) && callbackOk.call(this);
+                modal.remove();
             },
             onCancel: function (val) {
                 $.isFunction(callbackCancel) && callbackCancel.call(this);
+                modal.remove();
             }
         });
     };
@@ -4827,7 +4830,7 @@ $(function () {
         }
 
         var dafaults = {
-            title: title ? title : '提示信息',
+            title: title ? title : '',
             content: typeof text === 'string' ? text : '',
             btns: btns ? btns : {
                 '取消': function (dialog) {
@@ -7325,273 +7328,6 @@ $(function () {
             return date.getFullYear() + '-' + formatNumber(date.getMonth() + 1, 2) + '-' + formatNumber(date.getDate(), 2);
         };
 
-    var mockData = {
-        "2015-12-14": {
-            "price": "0.01",
-            "childprice": "0.01",
-            "line_id": 42,
-            "stock": "100"
-        },
-        "2015-12-15": {
-            "price": "0.01",
-            "childprice": "0.01",
-            "line_id": 42,
-            "stock": "100"
-        },
-        "2015-12-16": {
-            "price": "0.01",
-            "childprice": "0.01",
-            "line_id": 42,
-            "stock": "100"
-        },
-        "2015-12-17": {
-            "price": "0.01",
-            "childprice": "0.01",
-            "line_id": 42,
-            "stock": "100"
-        },
-        "2015-12-18": {
-            "price": "0.01",
-            "childprice": "0.01",
-            "line_id": 42,
-            "stock": "100"
-        },
-        "2015-12-19": {
-            "price": "0.01",
-            "childprice": "0.01",
-            "line_id": 42,
-            "stock": "100"
-        },
-        "2015-12-20": {
-            "price": "0.01",
-            "childprice": "0.01",
-            "line_id": 42,
-            "stock": "100"
-        },
-        "2015-08-21": {
-            "price": "0.01",
-            "childprice": "0.01",
-            "line_id": 42,
-            "stock": "100"
-        },
-        "2015-12-22": {
-            "price": "0.01",
-            "childprice": "0.01",
-            "line_id": 42,
-            "stock": "100"
-        },
-        "2015-12-23": {
-            "price": "0.01",
-            "childprice": "0.01",
-            "line_id": 42,
-            "stock": "100"
-        },
-        "2015-12-24": {
-            "price": "0.01",
-            "childprice": "0.01",
-            "line_id": 42,
-            "stock": "100"
-        },
-        "2015-12-25": {
-            "price": "0.01",
-            "childprice": "0.01",
-            "line_id": 42,
-            "stock": "100"
-        },
-        "2015-12-26": {
-            "price": "0.01",
-            "childprice": "0.01",
-            "line_id": 42,
-            "stock": "100"
-        },
-        "2015-12-27": {
-            "price": "0.01",
-            "childprice": "0.01",
-            "line_id": 42,
-            "stock": "100"
-        },
-        "2015-12-28": {
-            "price": "0.01",
-            "childprice": "0.01",
-            "line_id": 42,
-            "stock": "100"
-        },
-        "2015-12-29": {
-            "price": "0.01",
-            "childprice": "0.01",
-            "line_id": 42,
-            "stock": "100"
-        },
-        "2015-12-30": {
-            "price": "0.01",
-            "childprice": "0.01",
-            "line_id": 42,
-            "stock": "100"
-        },
-        "2015-12-31": {
-            "price": "0.01",
-            "childprice": "0.01",
-            "line_id": 42,
-            "stock": "100"
-        },
-        "2016-01-01": {
-            "price": "0.01",
-            "childprice": "0.01",
-            "line_id": 42,
-            "stock": "100"
-        },
-        "2016-01-02": {
-            "price": "0.01",
-            "childprice": "0.01",
-            "line_id": 42,
-            "stock": "100"
-        },
-        "2016-01-03": {
-            "price": "0.01",
-            "childprice": "0.01",
-            "line_id": 42,
-            "stock": "100"
-        },
-        "2016-01-04": {
-            "price": "0.01",
-            "childprice": "0.01",
-            "line_id": 42,
-            "stock": "100"
-        },
-        "2015-09-05": {
-            "price": "0.01",
-            "childprice": "0.01",
-            "line_id": 42,
-            "stock": "100"
-        },
-        "2015-09-06": {
-            "price": "0.01",
-            "childprice": "0.01",
-            "line_id": 42,
-            "stock": "100"
-        },
-        "2015-09-07": {
-            "price": "0.01",
-            "childprice": "0.01",
-            "line_id": 42,
-            "stock": "100"
-        },
-        "2015-09-08": {
-            "price": "0.01",
-            "childprice": "0.01",
-            "line_id": 42,
-            "stock": "100"
-        },
-        "2015-09-09": {
-            "price": "0.01",
-            "childprice": "0.01",
-            "line_id": 42,
-            "stock": "100"
-        },
-        "2015-09-10": {
-            "price": "0.01",
-            "childprice": "0.01",
-            "line_id": 42,
-            "stock": "100"
-        },
-        "2015-09-11": {
-            "price": "0.01",
-            "childprice": "0.01",
-            "line_id": 42,
-            "stock": "100"
-        },
-        "2015-09-12": {
-            "price": "0.01",
-            "childprice": "0.01",
-            "line_id": 42,
-            "stock": "100"
-        },
-        "2015-09-13": {
-            "price": "0.01",
-            "childprice": "0.01",
-            "line_id": 42,
-            "stock": "100"
-        },
-        "2015-09-14": {
-            "price": "0.01",
-            "childprice": "0.01",
-            "line_id": 42,
-            "stock": "100"
-        },
-        "2015-09-15": {
-            "price": "0.01",
-            "childprice": "0.01",
-            "line_id": 42,
-            "stock": "100"
-        },
-        "2015-09-16": {
-            "price": "0.01",
-            "childprice": "0.01",
-            "line_id": 42,
-            "stock": "100"
-        },
-        "2015-09-17": {
-            "price": "0.01",
-            "childprice": "0.01",
-            "line_id": 42,
-            "stock": "100"
-        },
-        "2015-09-18": {
-            "price": "0.01",
-            "childprice": "0.01",
-            "line_id": 42,
-            "stock": "100"
-        },
-        "2015-09-19": {
-            "price": "0.01",
-            "childprice": "0.01",
-            "line_id": 42,
-            "stock": "100"
-        },
-        "2015-09-20": {
-            "price": "0.01",
-            "childprice": "0.01",
-            "line_id": 42,
-            "stock": "100"
-        },
-        "2015-09-21": {
-            "price": "0.01",
-            "childprice": "0.01",
-            "line_id": 42,
-            "stock": "100"
-        },
-        "2015-09-22": {
-            "price": "0.01",
-            "childprice": "0.01",
-            "line_id": 42,
-            "stock": "100"
-        },
-        "2015-09-23": {
-            "price": "0.01",
-            "childprice": "0.01",
-            "line_id": 42,
-            "stock": "100"
-        },
-        "2015-09-24": {
-            "price": "0.01",
-            "childprice": "0.01",
-            "line_id": 42,
-            "stock": "100"
-        },
-        "2015-09-25": {
-            "price": "0.01",
-            "childprice": "0.01",
-            "line_id": 42,
-            "stock": "100"
-        },
-        "2015-09-26": {
-            "price": "0.01",
-            "childprice": "0.01",
-            "line_id": 42,
-            "stock": "100"
-        }
-    };
-
 
     var Calendar = function (element, options) {
         this.$el = $(element);
@@ -7602,6 +7338,7 @@ $(function () {
         this.iscroll = null;
         this.lastDate = new Date();
         this.pageIndex = 0;
+        this.loading = false;
         this.init();
     }
 
@@ -7614,15 +7351,16 @@ $(function () {
         perPage: 5,
         totalPage: 12,
         datePrice: null,
+        loadData: function (dateStr) {
+
+        }
     }
 
     Calendar.prototype = {
 
         init: function () {
 
-            var el = this.$el,
-                opts = this._options;
-
+            var opts = this._options;
             this.renderHtml(new Date(), opts.perPage);
             this.bindEvents();
 
@@ -7656,28 +7394,44 @@ $(function () {
                 topOffset: 0
             }, {
                 onScrollStart: function (e) {
-                    //el.trigger('scrollstart', e);
+                    el.trigger('scrollstart', e);
                 },
                 onScrollMove: function (e) {
 
                     if (this.y < (this.maxScrollY - 50) && _this.pageIndex < opts.totalPage) {
-                        console.log(formatDate(_this.lastDate));
-                        _this.loadMonthData(_this.lastDate, opts.perPage, mockData);
+                        _this.loading = true;
                     }
-                    //el.trigger('scrollmove', e);
+                    el.trigger('scrollmove', e);
 
                 },
                 onScrollEnd: function (e) {
-                    //el.trigger('scrollend', e);
-                    _this.refresh();
+                    _this._loadingAction();
+                    el.trigger('scrollend', e);
                 }
             }));
 
         },
 
-        loadMonthData: function (date, amount, priceData) {
+        // 改变状态
+        setState: function (flag) {
+            this.loading = flag;
+        },
+
+        // 加载数据
+        _loadingAction: function () {
+            var me = this,
+                opts = me._options,
+                loadFn = opts.loadData;
+            //console.log(me.loading);
+            if (me.loading && this.pageIndex < opts.totalPage) {
+                $.isFunction(loadFn) && loadFn(formatDate(me.lastDate));
+            }
+        },
+
+        // 外部调用，加载月份
+        loadMonthData: function (priceData) {
             var opts = this._options,
-                tempDate = date,
+                tempDate = this.lastDate,
                 nowYear = tempDate.getFullYear(),
                 nowMonth = tempDate.getMonth(),
                 today = new Date(),
@@ -7701,13 +7455,12 @@ $(function () {
 
             firstDay = (isNaN(firstDay = parseInt(opts.firstDay, 10)) ? 0 : firstDay);
 
-
             // 一次显示多少个月？
 
-            this.lastDate = new Date(nowYear, nowMonth + amount, 1);
-                    this.pageIndex += amount;
+            this.lastDate = new Date(nowYear, nowMonth + opts.perPage, 1);
+            this.pageIndex += opts.perPage;
 
-            for (k = 0; k < amount; k++) {
+            for (k = 0; k < opts.perPage; k++) {
 
                 renderDate = new Date(nowYear, nowMonth + k, 1);
 
@@ -7826,21 +7579,21 @@ $(function () {
         // 显示价格
         _renderPrice: function (printDate, priceData) {
 
-            var opts = this._options,
-                datePrice = priceData || opts.datePrice,
-                date,
+            var date,
                 output = '';
 
-            if ($.isPlainObject(datePrice)) {
-                $.each(datePrice, function (k, v) {
-                    date = parseDate(k);
-                    if (printDate.getTime() === date.getTime()) {
-                        if (v.price != '') {
-                            output = '&yen;' + v.price;
+            if (priceData && !$.isEmptyObject(priceData)) {
+                if ($.isPlainObject(priceData)) {
+                    $.each(priceData, function (k, v) {
+                        date = parseDate(k);
+                        if (printDate.getTime() === date.getTime()) {
+                            if (v.price != '') {
+                                output = '&yen;' + v.price;
+                            }
+                            return false;
                         }
-                        return false;
-                    }
-                });
+                    });
+                }
             }
 
             return output;
@@ -7886,7 +7639,7 @@ $(function () {
     }
 
     // 插件
-    $.fn.calendar = function (option) {
+    $.fn.calendar = function (option, value) {
         return this.each(function () {
             var $this = $(this);
             var data = $this.data('calendar');
@@ -7898,7 +7651,7 @@ $(function () {
             }
 
             if (typeof option == 'string') {
-                data[option] && data[option]();
+                data[option] && data[option](value);
             }
 
         });
@@ -7917,7 +7670,7 @@ $(function () {
         this.options = $.extend({},
             FormPassword.DEFAULTS, options || {});
         this.element = $element;
-        this.input = this.element.next("input").length ? this.element.next("input") : this.element.prev("input");
+        this.input = this.element.next("input").length ? this.element.next("input") : this.element.closest('.input-row').find("input");
         this.init();
     }
 

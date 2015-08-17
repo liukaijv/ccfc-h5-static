@@ -5,7 +5,7 @@
         this.options = $.extend({},
             FormPassword.DEFAULTS, options || {});
         this.element = $element;
-        this.input = this.element.next("input").length ? this.element.next("input") : this.element.prev("input");
+        this.input = this.element.next("input").length ? this.element.next("input") : this.element.closest('.input-row').find("input");
         this.init();
     }
 
