@@ -6,6 +6,10 @@ $(function () {
     //     }, false);
     // }
 
+    $(window).load(function() {
+        //$("#cc-preloader").delay(100).fadeOut("slow");
+    });
+
     $('[data-back]').on('click', function () {
         window.history.go(-1);
         return false;

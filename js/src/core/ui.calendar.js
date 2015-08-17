@@ -271,7 +271,7 @@
                     html += '<tr>';
 
                     for (j = 0; j < 7; j++) {
-                        html += this._renderDay(j, printDate, firstDay, drawMonth, selectedDate, today, minDate, maxDate);
+                        html += this._renderDay(j, printDate, firstDay, drawMonth, selectedDate, today, minDate, maxDate, opts.datePrice);
                         printDate.setDate(printDate.getDate() + 1);
                     }
                     html += '</tr>';

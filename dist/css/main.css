@@ -1572,6 +1572,55 @@ img {
   transform: rotate(-45deg);
   min-width: auto;
 }
+#cc-preloader {
+  position: absolute;
+  left: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  width: 100px;
+  height: 100px;
+  margin: auto;
+  z-index: 200;
+}
+#cc-preloader #cc-loading {
+  height: 100%;
+  width: 100%;
+  border-radius: 50%;
+  background: transparent;
+  border: 1rem solid #3f9fe0;
+}
+#cc-preloader #cc-loading span {
+  position: absolute;
+  width: 0;
+  height: 0;
+  border-left: 50px solid transparent;
+  border-right: 50px solid transparent;
+  border-top: 70px solid #e0dfdd;
+  top: 0;
+  left: 0;
+  -webkit-animation: ticktock 5s linear infinite;
+  -webkit-transform-origin: 50px 80px;
+  animation: ticktock 5s linear infinite;
+  transform-origin: 50px 80px;
+  border-radius: 50%;
+}
+@-webkit-keyframes ticktock {
+  0% {
+    -webkit-transform: rotate(0);
+  }
+  100% {
+    -webkit-transform: rotate(360deg);
+  }
+}
+@keyframes ticktock {
+  0% {
+    transform: rotate(0);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
 .cc-tabs-nav {
   margin: 0;
   padding: 0;
