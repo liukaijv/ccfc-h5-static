@@ -1,26 +1,29 @@
 .@{ns}calendar-week {
+  position: relative;
+  z-index: 1;
   width: 100%;
   display: table;
-  table-layout: fixed;
+  //table-layout: fixed;
   background-color: #e4e4e4;
   li {
     display: table-cell;
     width: 1%;
-    padding: .5rem;
+    padding: 0 .5rem;
     text-align: center;
-    line-height: 2.5rem;
+    line-height: 40px;
   }
 }
 
 .@{ns}calendar-content {
-  position: absolute;
-  top: 3.5rem + @headerHeight;
-  bottom: 0;
+  //position: absolute;
+  //top: 3.5rem + @headerHeight;
+  //bottom: 0;
+  margin-top: -2px;
 }
 
 .@{ns}calendar-header {
   text-align: center;
-  padding: .5rem;
+  padding: 1rem .5rem;
   background: #f1f1f1;
 }
 
@@ -33,7 +36,7 @@
 .@{ns}calendar-calendar td {
   text-align: center;
   background: #fff;
-  border: 2px solid #f7f7f7;
+  border: 2px solid #f1f1f1;
   font-weight: normal;
 }
 

@@ -11,6 +11,7 @@
   border: none;
   width: 100%;
   cursor: pointer;
+  font-size: 16px;
   &:disabled,
   &.disabled {
     background-color: #999;
@@ -21,13 +22,13 @@
 .goods-info {
   color: @grayDark;
   background-color: @white;
+  padding: 1rem 1rem 1.5rem;
 }
 
 .goods-name {
   display: block;
-  padding: 10px 10px 0;
   font-size: 16px;
-  .line-clamp(3, @baseLineHeight);
+  .line-clamp(2, @baseLineHeight);
   color: @black;
 }
 
@@ -143,7 +144,6 @@
 .route-list {
   & > li {
     background-color: #fff;
-    padding-bottom: 10px;
     margin: 15px 0;
     box-shadow: 0 0 3px rgba(0, 0, 0, .2);
   }
@@ -244,7 +244,7 @@
   li {
     border-top: 1px solid @baseBorderColor;
     &.item-header {
-      padding: 10px;
+      padding: 1.2rem 1rem;
       color: @colorPrimary;
     }
     &:first-child {
@@ -252,7 +252,7 @@
     }
     a {
       display: block;
-      padding: 10px;
+      padding: 1.2rem 1rem;
       background-color: #fff;
       &.@{ns}active,
       &:active {
@@ -267,7 +267,7 @@
   display: inline-block;
   min-width: 4rem;
   margin-right: 1rem;
-  font-size: 2rem;
+  font-size: 2.4rem;
   span {
     font-size: 1.4rem;
   }
@@ -300,4 +300,14 @@
       }
     }
   }
+}
+
+.goods-number-values{
+  li{
+    padding: 1.2rem 0;
+  }
+}
+
+.agreement-block{
+  padding: 1.5rem 1rem;
 }

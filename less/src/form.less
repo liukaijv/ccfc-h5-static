@@ -40,7 +40,6 @@
 // 复选框
 .@{ns}radio,
 .@{ns}checkbox {
-  .box-sizing();
   display: inline-block;
   vertical-align: middle;
   position: relative;
@@ -71,6 +70,26 @@
       border-top: none;
       border-right: none;
       .rotate(-45deg);
+      .sm & {
+        border-width: .2rem;
+        left: .2rem;
+        top: .3rem;
+      }
+    }
+  }
+  &.sm {
+    height: 1.6rem;
+    width: 1.6rem;
+    &:checked {
+      background-color: #47d873;
+      border: 1px solid #47d873;
+      &:after {
+        width: 1rem;
+        height: .5rem;
+        border-width: .2rem;
+        left: .25rem;
+        top: .27rem;
+      }
     }
   }
   &:disabled {

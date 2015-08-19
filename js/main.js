@@ -5998,7 +5998,8 @@ $(function () {
     }
     window.appSwipe = Swipe($swipe.get(0), {
         callback: function (pos) {
-            pos = pos % 2;
+            //console.log(pos);
+            //pos = pos % 2;
             counts.find('.current-index').html(pos + 1);
             $swipe.find('.dot').eq(pos).addClass('active').siblings().removeClass('active');
         }
@@ -7337,7 +7338,7 @@ $(function () {
         this.date = this._options.date || new Date();
         this.iscroll = null;
         this.lastDate = new Date();
-        this.pageIndex = 0;
+        this.pageIndex = 4;
         this.loading = false;
         this.init();
     }
@@ -7360,9 +7361,13 @@ $(function () {
 
         init: function () {
 
-            var opts = this._options;
+            var el = this.$el,
+                opts = this._options;
             this.renderHtml(new Date(), opts.perPage);
+            // 安卓用样式不行，只能强行设置下高度
+            el.find('.cc-calendar-content').height($(window).height() - 40 - $('.cc-header').height());
             this.bindEvents();
+            this.refresh();
 
         },
 
@@ -7422,9 +7427,11 @@ $(function () {
             var me = this,
                 opts = me._options,
                 loadFn = opts.loadData;
-            //console.log(me.loading);
+            //console.log(this.pageIndex);
             if (me.loading && this.pageIndex < opts.totalPage) {
                 $.isFunction(loadFn) && loadFn(formatDate(me.lastDate));
+                // 页面增加
+                this.pageIndex += opts.perPage;
             }
         },
 
@@ -7458,7 +7465,6 @@ $(function () {
             // 一次显示多少个月？
 
             this.lastDate = new Date(nowYear, nowMonth + opts.perPage, 1);
-            this.pageIndex += opts.perPage;
 
             for (k = 0; k < opts.perPage; k++) {
 
@@ -7541,7 +7547,6 @@ $(function () {
             // 一次显示多少个月？
 
             this.lastDate = new Date(nowYear, nowMonth + amount, 1);
-            this.pageIndex += amount;
 
             for (k = 0; k < amount; k++) {
 
@@ -7573,7 +7578,6 @@ $(function () {
             html += '</tbody></table></div></div>';
 
             this.$el.append(html);
-
         },
 
         // 显示价格
@@ -7583,7 +7587,7 @@ $(function () {
                 output = '';
 
             if (priceData && !$.isEmptyObject(priceData)) {
-                if ($.isPlainObject(priceData)) {
+                if (priceData && $.isPlainObject(priceData)) {
                     $.each(priceData, function (k, v) {
                         date = parseDate(k);
                         if (printDate.getTime() === date.getTime()) {
@@ -7783,7 +7787,38 @@ $(function () {
 
 $(function () {
     $('[data-role="countdown"]').countdown();
-});$(function () {
+});/**
+ *
+ * js错误收集
+ *
+ */
+
+window.onerror = function (message, url, line) {
+    if (!url) return;
+    var msg = {},
+        msgStr,
+        msgArr = [];
+
+    //组装错误信息
+    msg.ua = window.navigator.userAgent;
+    msg.message = message.message;
+    msg.url = url;
+    msg.line = line;
+    msg.page = window.location.href;
+
+    //将错误信息转换成字符串
+    for (var key in msg) {
+        msgArr.push(key + '=' + msg[key]);
+    }
+    msgStr = msgArr.join('\n');
+
+    //alert(msgStr);
+    // 后台写放日志
+    //$.get('', {'error': msgStr});
+
+};
+
+$(function () {
 
     // if ('addEventListener' in document) {
     //     document.addEventListener('DOMContentLoaded', function() {
@@ -7791,8 +7826,16 @@ $(function () {
     //     }, false);
     // }
 
-    $(window).load(function() {
-        //$("#cc-preloader").delay(100).fadeOut("slow");
+    var $loading = $("#cc-loading");
+    $(window).load(function () {
+        $loading.delay(100).fadeOut("slow");
+    });
+
+    $(document).on('ajaxStart', function () {
+        $loading.show();
+    });
+    $(document).on('ajaxComplete', function () {
+        $loading.fadeOut();
     });
 
     $('[data-back]').on('click', function () {

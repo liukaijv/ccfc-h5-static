@@ -46,7 +46,7 @@
         this.date = this._options.date || new Date();
         this.iscroll = null;
         this.lastDate = new Date();
-        this.pageIndex = 0;
+        this.pageIndex = 4;
         this.loading = false;
         this.init();
     }
@@ -69,9 +69,13 @@
 
         init: function () {
 
-            var opts = this._options;
+            var el = this.$el,
+                opts = this._options;
             this.renderHtml(new Date(), opts.perPage);
+            // 安卓用样式不行，只能强行设置下高度
+            el.find('.cc-calendar-content').height($(window).height() - 40 - $('.cc-header').height());
             this.bindEvents();
+            this.refresh();
 
         },
 
@@ -131,9 +135,11 @@
             var me = this,
                 opts = me._options,
                 loadFn = opts.loadData;
-            //console.log(me.loading);
+            //console.log(this.pageIndex);
             if (me.loading && this.pageIndex < opts.totalPage) {
                 $.isFunction(loadFn) && loadFn(formatDate(me.lastDate));
+                // 页面增加
+                this.pageIndex += opts.perPage;
             }
         },
 
@@ -167,7 +173,6 @@
             // 一次显示多少个月？
 
             this.lastDate = new Date(nowYear, nowMonth + opts.perPage, 1);
-            this.pageIndex += opts.perPage;
 
             for (k = 0; k < opts.perPage; k++) {
 
@@ -250,7 +255,6 @@
             // 一次显示多少个月？
 
             this.lastDate = new Date(nowYear, nowMonth + amount, 1);
-            this.pageIndex += amount;
 
             for (k = 0; k < amount; k++) {
 
@@ -282,7 +286,6 @@
             html += '</tbody></table></div></div>';
 
             this.$el.append(html);
-
         },
 
         // 显示价格
@@ -292,7 +295,7 @@
                 output = '';
 
             if (priceData && !$.isEmptyObject(priceData)) {
-                if ($.isPlainObject(priceData)) {
+                if (priceData && $.isPlainObject(priceData)) {
                     $.each(priceData, function (k, v) {
                         date = parseDate(k);
                         if (printDate.getTime() === date.getTime()) {

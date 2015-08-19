@@ -622,7 +622,8 @@ $(function () {
     }
     window.appSwipe = Swipe($swipe.get(0), {
         callback: function (pos) {
-            pos = pos % 2;
+            //console.log(pos);
+            //pos = pos % 2;
             counts.find('.current-index').html(pos + 1);
             $swipe.find('.dot').eq(pos).addClass('active').siblings().removeClass('active');
         }

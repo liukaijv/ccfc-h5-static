@@ -1,3 +1,34 @@
+/**
+ *
+ * js错误收集
+ *
+ */
+
+window.onerror = function (message, url, line) {
+    if (!url) return;
+    var msg = {},
+        msgStr,
+        msgArr = [];
+
+    //组装错误信息
+    msg.ua = window.navigator.userAgent;
+    msg.message = message.message;
+    msg.url = url;
+    msg.line = line;
+    msg.page = window.location.href;
+
+    //将错误信息转换成字符串
+    for (var key in msg) {
+        msgArr.push(key + '=' + msg[key]);
+    }
+    msgStr = msgArr.join('\n');
+
+    //alert(msgStr);
+    // 后台写放日志
+    //$.get('', {'error': msgStr});
+
+};
+
 $(function () {
 
     // if ('addEventListener' in document) {
@@ -6,8 +37,16 @@ $(function () {
     //     }, false);
     // }
 
-    $(window).load(function() {
-        //$("#cc-preloader").delay(100).fadeOut("slow");
+    var $loading = $("#cc-loading");
+    $(window).load(function () {
+        $loading.delay(100).fadeOut("slow");
+    });
+
+    $(document).on('ajaxStart', function () {
+        $loading.show();
+    });
+    $(document).on('ajaxComplete', function () {
+        $loading.fadeOut();
     });
 
     $('[data-back]').on('click', function () {
