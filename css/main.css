@@ -1730,9 +1730,9 @@ img {
   width: 0;
   height: 0;
   vertical-align: middle;
-  border-bottom: 8px solid #fed294;
-  border-right: 8px solid transparent;
-  border-left: 8px solid transparent;
+  border-bottom: 20px solid #fed294;
+  border-right: 20px solid transparent;
+  border-left: 20px solid transparent;
   border-top: 0 dotted;
   -webkit-transform: rotate(360deg);
   -ms-transform: rotate(360deg);
@@ -1744,9 +1744,9 @@ img {
   width: 0;
   height: 0;
   vertical-align: middle;
-  border-top: 8px solid #feedbe;
-  border-right: 8px solid transparent;
-  border-left: 8px solid transparent;
+  border-top: 20px solid #feedbe;
+  border-right: 20px solid transparent;
+  border-left: 20px solid transparent;
   border-bottom: 0 dotted;
   -webkit-transform: rotate(360deg);
   -ms-transform: rotate(360deg);
@@ -1758,39 +1758,39 @@ img {
   width: 0;
   height: 0;
   vertical-align: middle;
-  border-bottom: 8px solid #fccf5a;
-  border-right: 8px solid transparent;
-  border-left: 8px solid transparent;
+  border-bottom: 20px solid #fccf5a;
+  border-right: 20px solid transparent;
+  border-left: 20px solid transparent;
   border-top: 0 dotted;
   -webkit-transform: rotate(360deg);
   -ms-transform: rotate(360deg);
   transform: rotate(360deg);
-  left: 8px;
+  left: 20px;
 }
 .diamond .top-b {
   display: inline-block;
   width: 0;
   height: 0;
   vertical-align: middle;
-  border-top: 8px solid #fdd783;
-  border-right: 8px solid transparent;
-  border-left: 8px solid transparent;
+  border-top: 20px solid #fdd783;
+  border-right: 20px solid transparent;
+  border-left: 20px solid transparent;
   border-bottom: 0 dotted;
   -webkit-transform: rotate(360deg);
   -ms-transform: rotate(360deg);
   transform: rotate(360deg);
   top: 0;
-  left: 24px;
+  left: 60px;
 }
 .diamond .top-b:before {
-  top: -8px;
+  top: -20px;
   display: inline-block;
   width: 0;
   height: 0;
   vertical-align: middle;
-  border-bottom: 8px solid #fdb34c;
-  border-right: 8px solid transparent;
-  border-left: 8px solid transparent;
+  border-bottom: 20px solid #fdb34c;
+  border-right: 20px solid transparent;
+  border-left: 20px solid transparent;
   border-top: 0 dotted;
   -webkit-transform: rotate(360deg);
   -ms-transform: rotate(360deg);
@@ -1802,15 +1802,29 @@ img {
   width: 0;
   height: 0;
   vertical-align: middle;
-  border-top: 24px solid #f68b00;
-  border-right: 24px solid transparent;
-  border-left: 24px solid transparent;
+  border-top: 60px solid #ff9e20;
+  border-right: 60px solid transparent;
+  border-left: 60px solid transparent;
   border-bottom: 0 dotted;
   -webkit-transform: rotate(360deg);
   -ms-transform: rotate(360deg);
   transform: rotate(360deg);
-  top: 8px;
+  top: 20px;
   left: 0;
+}
+.diamond .bot:before {
+  top: -60px;
+  left: 0;
+  border-top: 60px solid #f68b00;
+  border-right: 60px solid transparent;
+  border-left: 60px solid f68b00;
+}
+.diamond .bot:after {
+  top: -60px;
+  left: -20px;
+  border-top: 60px solid #f9ac3c;
+  border-right: 20px solid transparent;
+  border-left: 20px solid transparent;
 }
 .cc-tabs-nav {
   margin: 0;

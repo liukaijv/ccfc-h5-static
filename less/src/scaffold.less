@@ -389,8 +389,8 @@
 //  z-index:-1;
 //}
 
-@angleSm: 8px;
-@angleLg: 24px;
+@angleSm: 20px;
+@angleLg: 3 * @angleSm;
 .diamond {
   position: relative;
   & > *,
@@ -427,13 +427,22 @@
     }
   }
   .bot {
-    .caret-down(@angleLg, #f68b00);
+    .caret-down(@angleLg, lighten(#f68b00, 8%));
     top: @angleSm;
     left: 0;
-    //&:before {
-    //  top: -@angleLg ;
-    //  .caret-down(@angleLg, #f9ac3c);
-    //  left: 0;
-    //}
+    &:before {
+      top: -@angleLg ;
+      left: 0;
+      border-top: @angleLg solid #f68b00;
+      border-right: @angleLg solid transparent;
+      border-left: @angleLg solid f68b00;
+    }
+    &:after {
+      top: -@angleLg ;
+      left: -@angleSm;
+      border-top: @angleLg solid #f9ac3c;
+      border-right: @angleSm solid transparent;
+      border-left: @angleSm solid transparent;
+    }
   }
 }
