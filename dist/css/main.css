@@ -382,6 +382,12 @@ img {
 .mt8 {
   margin-top: .8rem;
 }
+.mt2 {
+  margin-top: .2rem;
+}
+.mt4 {
+  margin-top: .4rem;
+}
 .clearfix:before,
 .clearfix:after {
   content: "";
@@ -867,6 +873,7 @@ img {
   line-height: 3.6rem;
   padding: 0 0.4rem;
   border: none;
+  color: #666;
 }
 .cc-navigator-list {
   margin: 0;
@@ -1711,106 +1718,124 @@ img {
     transform: rotate(360deg);
   }
 }
-.diamond {
+.cc-diamond {
   position: relative;
+  display: inline-block;
+  width: 24px;
+  height: 16px;
+  overflow: hidden;
+  vertical-align: middle;
 }
-.diamond > *,
-.diamond > *:before,
-.diamond > *:after {
+.cc-diamond > *,
+.cc-diamond > *:before,
+.cc-diamond > *:after {
   position: absolute;
   height: 0;
   width: 0;
 }
-.diamond > *:before,
-.diamond > *:after {
+.cc-diamond > *:before,
+.cc-diamond > *:after {
   content: "";
 }
-.diamond .top-a {
+.cc-diamond .top-a {
   display: inline-block;
   width: 0;
   height: 0;
   vertical-align: middle;
-  border-bottom: 8px solid #fed294;
-  border-right: 8px solid transparent;
-  border-left: 8px solid transparent;
+  border-bottom: 4px solid #fed294;
+  border-right: 4px solid transparent;
+  border-left: 4px solid transparent;
   border-top: 0 dotted;
   -webkit-transform: rotate(360deg);
   -ms-transform: rotate(360deg);
   transform: rotate(360deg);
   left: 0;
 }
-.diamond .top-a:before {
+.cc-diamond .top-a:before {
   display: inline-block;
   width: 0;
   height: 0;
   vertical-align: middle;
-  border-top: 8px solid #feedbe;
-  border-right: 8px solid transparent;
-  border-left: 8px solid transparent;
+  border-top: 4px solid #feedbe;
+  border-right: 4px solid transparent;
+  border-left: 4px solid transparent;
   border-bottom: 0 dotted;
   -webkit-transform: rotate(360deg);
   -ms-transform: rotate(360deg);
   transform: rotate(360deg);
   left: 0;
 }
-.diamond .top-a:after {
+.cc-diamond .top-a:after {
   display: inline-block;
   width: 0;
   height: 0;
   vertical-align: middle;
-  border-bottom: 8px solid #fccf5a;
-  border-right: 8px solid transparent;
-  border-left: 8px solid transparent;
+  border-bottom: 4px solid #fccf5a;
+  border-right: 4px solid transparent;
+  border-left: 4px solid transparent;
   border-top: 0 dotted;
   -webkit-transform: rotate(360deg);
   -ms-transform: rotate(360deg);
   transform: rotate(360deg);
-  left: 8px;
+  left: 4px;
 }
-.diamond .top-b {
+.cc-diamond .top-b {
   display: inline-block;
   width: 0;
   height: 0;
   vertical-align: middle;
-  border-top: 8px solid #fdd783;
-  border-right: 8px solid transparent;
-  border-left: 8px solid transparent;
+  border-top: 4px solid #fdd783;
+  border-right: 4px solid transparent;
+  border-left: 4px solid transparent;
   border-bottom: 0 dotted;
   -webkit-transform: rotate(360deg);
   -ms-transform: rotate(360deg);
   transform: rotate(360deg);
   top: 0;
-  left: 24px;
+  left: 12px;
 }
-.diamond .top-b:before {
-  top: -8px;
+.cc-diamond .top-b:before {
+  top: -4px;
   display: inline-block;
   width: 0;
   height: 0;
   vertical-align: middle;
-  border-bottom: 8px solid #fdb34c;
-  border-right: 8px solid transparent;
-  border-left: 8px solid transparent;
+  border-bottom: 4px solid #fdb34c;
+  border-right: 4px solid transparent;
+  border-left: 4px solid transparent;
   border-top: 0 dotted;
   -webkit-transform: rotate(360deg);
   -ms-transform: rotate(360deg);
   transform: rotate(360deg);
   left: 0;
 }
-.diamond .bot {
+.cc-diamond .bot {
   display: inline-block;
   width: 0;
   height: 0;
   vertical-align: middle;
-  border-top: 24px solid #f68b00;
-  border-right: 24px solid transparent;
-  border-left: 24px solid transparent;
+  border-top: 12px solid #f9ac3c;
+  border-right: 12px solid transparent;
+  border-left: 12px solid transparent;
   border-bottom: 0 dotted;
   -webkit-transform: rotate(360deg);
   -ms-transform: rotate(360deg);
   transform: rotate(360deg);
-  top: 8px;
+  top: 4px;
   left: 0;
+}
+.cc-diamond .bot:before {
+  top: -12px;
+  left: 0;
+  border-top: 12px solid #f68b00;
+  border-right: 12px solid transparent;
+}
+.cc-diamond .bot:after {
+  top: -12px;
+  left: -4px;
+  border-top: 12px solid #ffb800;
+  border-right: 4px solid transparent;
+  border-left: 4px solid transparent;
 }
 .cc-tabs-nav {
   margin: 0;
@@ -2428,7 +2453,7 @@ img {
 .goods-info {
   color: #666666;
   background-color: #ffffff;
-  padding: 1rem 1rem 1.5rem;
+  padding: 1.2rem 1rem;
 }
 .goods-name {
   display: block;
@@ -2560,7 +2585,7 @@ ul.cc-score {
 }
 .route-list > li {
   background-color: #fff;
-  margin: 15px 0;
+  margin: 1.5rem 0;
   box-shadow: 0 0 3px rgba(0, 0, 0, 0.2);
 }
 .goods-slider {
