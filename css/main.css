@@ -1206,6 +1206,28 @@ img {
 .btn-block {
   display: block;
 }
+.badge {
+  display: inline-block;
+  line-height: 1;
+  padding: .2rem .4rem;
+  border-radius: .2rem;
+}
+.badge.radius {
+  padding: .2rem;
+  border-radius: 50%;
+}
+.badge-red {
+  display: inline-block;
+  line-height: 1;
+  padding: .2rem .4rem;
+  border-radius: .2rem;
+  background-color: #e51400;
+  color: #fff;
+}
+.badge-red.radius {
+  padding: .2rem;
+  border-radius: 50%;
+}
 .cc-alert {
   background-color: #fbf3df;
   padding: 1.2rem;
@@ -1721,8 +1743,8 @@ img {
 .cc-diamond {
   position: relative;
   display: inline-block;
-  width: 24px;
-  height: 16px;
+  width: 18px;
+  height: 12px;
   overflow: hidden;
   vertical-align: middle;
 }
@@ -1742,9 +1764,9 @@ img {
   width: 0;
   height: 0;
   vertical-align: middle;
-  border-bottom: 4px solid #fed294;
-  border-right: 4px solid transparent;
-  border-left: 4px solid transparent;
+  border-bottom: 3px solid #fed294;
+  border-right: 3px solid transparent;
+  border-left: 3px solid transparent;
   border-top: 0 dotted;
   -webkit-transform: rotate(360deg);
   -ms-transform: rotate(360deg);
@@ -1756,9 +1778,9 @@ img {
   width: 0;
   height: 0;
   vertical-align: middle;
-  border-top: 4px solid #feedbe;
-  border-right: 4px solid transparent;
-  border-left: 4px solid transparent;
+  border-top: 3px solid #feedbe;
+  border-right: 3px solid transparent;
+  border-left: 3px solid transparent;
   border-bottom: 0 dotted;
   -webkit-transform: rotate(360deg);
   -ms-transform: rotate(360deg);
@@ -1770,39 +1792,39 @@ img {
   width: 0;
   height: 0;
   vertical-align: middle;
-  border-bottom: 4px solid #fccf5a;
-  border-right: 4px solid transparent;
-  border-left: 4px solid transparent;
+  border-bottom: 3px solid #fccf5a;
+  border-right: 3px solid transparent;
+  border-left: 3px solid transparent;
   border-top: 0 dotted;
   -webkit-transform: rotate(360deg);
   -ms-transform: rotate(360deg);
   transform: rotate(360deg);
-  left: 4px;
+  left: 3px;
 }
 .cc-diamond .top-b {
   display: inline-block;
   width: 0;
   height: 0;
   vertical-align: middle;
-  border-top: 4px solid #fdd783;
-  border-right: 4px solid transparent;
-  border-left: 4px solid transparent;
+  border-top: 3px solid #fdd783;
+  border-right: 3px solid transparent;
+  border-left: 3px solid transparent;
   border-bottom: 0 dotted;
   -webkit-transform: rotate(360deg);
   -ms-transform: rotate(360deg);
   transform: rotate(360deg);
   top: 0;
-  left: 12px;
+  left: 9px;
 }
 .cc-diamond .top-b:before {
-  top: -4px;
+  top: -3px;
   display: inline-block;
   width: 0;
   height: 0;
   vertical-align: middle;
-  border-bottom: 4px solid #fdb34c;
-  border-right: 4px solid transparent;
-  border-left: 4px solid transparent;
+  border-bottom: 3px solid #fdb34c;
+  border-right: 3px solid transparent;
+  border-left: 3px solid transparent;
   border-top: 0 dotted;
   -webkit-transform: rotate(360deg);
   -ms-transform: rotate(360deg);
@@ -1814,28 +1836,28 @@ img {
   width: 0;
   height: 0;
   vertical-align: middle;
-  border-top: 12px solid #f9ac3c;
-  border-right: 12px solid transparent;
-  border-left: 12px solid transparent;
+  border-top: 9px solid #f9ac3c;
+  border-right: 9px solid transparent;
+  border-left: 9px solid transparent;
   border-bottom: 0 dotted;
   -webkit-transform: rotate(360deg);
   -ms-transform: rotate(360deg);
   transform: rotate(360deg);
-  top: 4px;
+  top: 3px;
   left: 0;
 }
 .cc-diamond .bot:before {
-  top: -12px;
+  top: -9px;
   left: 0;
-  border-top: 12px solid #f68b00;
-  border-right: 12px solid transparent;
+  border-top: 9px solid #f68b00;
+  border-right: 9px solid transparent;
 }
 .cc-diamond .bot:after {
-  top: -12px;
-  left: -4px;
-  border-top: 12px solid #ffb800;
-  border-right: 4px solid transparent;
-  border-left: 4px solid transparent;
+  top: -9px;
+  left: -3px;
+  border-top: 9px solid #ffb800;
+  border-right: 3px solid transparent;
+  border-left: 3px solid transparent;
 }
 .cc-tabs-nav {
   margin: 0;
@@ -2463,8 +2485,8 @@ img {
   -webkit-box-orient: vertical;
   -webkit-line-clamp: 2;
   overflow: hidden;
-  line-height: 1.5;
-  max-height: 3;
+  line-height: 20px;
+  max-height: 40px;
   color: #000000;
 }
 .goods-tags {
@@ -2612,11 +2634,15 @@ ul.cc-score {
   color: #fff;
   background-color: #ed5565;
 }
-.activity-label {
+.abs-label {
   z-index: 10;
   position: absolute;
   top: 1.2rem;
   left: 0;
+}
+.activity-label {
+  position: relative;
+  display: inline-block;
   background-color: #f8c651;
   color: #fff;
   height: 3.4rem;

@@ -1,1 +1,20 @@
- 
+.badge{
+  display: inline-block;
+  line-height: 1;
+  padding: .2rem .4rem;
+  border-radius: .2rem;
+  &.radius{
+    padding: .2rem;
+    border-radius: 50%;
+  }
+}
+
+.create-badge(@bg,@color: #fff){
+  .badge;
+  background-color: @bg;
+  color: #fff;
+}
+
+.badge-red{
+  .create-badge(@red);
+}

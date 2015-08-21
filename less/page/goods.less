@@ -28,7 +28,7 @@
 .goods-name {
   display: block;
   font-size: 16px;
-  .line-clamp(2, @baseLineHeight);
+  .line-clamp(2, 20px);
   color: @black;
 }
 
@@ -176,11 +176,15 @@
   }
 }
 
-.activity-label {
+.abs-label{
   z-index: 10;
   position: absolute;
   top: 1.2rem;
   left: 0;
+}
+.activity-label {
+  position: relative;
+  display: inline-block;
   background-color: #f8c651;
   color: #fff;
   height: 3.4rem;
@@ -311,3 +315,4 @@
 .agreement-block{
   padding: 1.5rem 1rem;
 }
+
