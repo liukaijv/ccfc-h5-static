@@ -10,8 +10,8 @@
     }
 
     FormPassword.DEFAULTS = {
-        "showText": '<i class="icon icon-eye f16"></i>',
-        "hideText": '<i class="icon icon-eye-slash f16"></i>'
+        "showText": '<i class="cc-icon-eye f20 color-grayLight"></i>',
+        "hideText": '<i class="cc-icon-eye-o f20 color-grayLight"></i>'
     };
 
     FormPassword.prototype = {

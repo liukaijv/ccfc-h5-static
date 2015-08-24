@@ -388,6 +388,9 @@ img {
 .mt4 {
   margin-top: .4rem;
 }
+.mt20 {
+  margin-top: 2rem;
+}
 .clearfix:before,
 .clearfix:after {
   content: "";
@@ -527,7 +530,7 @@ img {
   color: #666;
 }
 .color-grayLight {
-  color: #eee;
+  color: #d5d5d5;
 }
 .color-brown {
   color: #b4783b;
@@ -1570,6 +1573,9 @@ img {
   -ms-justify-content: center;
   justify-content: center;
 }
+.cc-header + .center-container .center-block {
+  margin-top: -30%;
+}
 .cc-spinner {
   display: inline-block;
   vertical-align: middle;
@@ -1858,6 +1864,10 @@ img {
   border-top: 9px solid #ffb800;
   border-right: 3px solid transparent;
   border-left: 3px solid transparent;
+}
+.cc-icon {
+  display: inline-block;
+  vertical-align: middle;
 }
 .cc-tabs-nav {
   margin: 0;
@@ -2720,6 +2730,19 @@ ul.cc-score {
   -ms-transform: rotate(-45deg);
   transform: rotate(-45deg);
   min-width: auto;
+}
+.coupon-label {
+  display: inline-block;
+  padding: .3rem 1rem;
+  background: url("../images/svg-coupon-label.svg") no-repeat center;
+  background-size: contain;
+  color: #f8c651;
+}
+.toggle-activity-list li {
+  padding: .8rem 0;
+}
+.toggle-activity-list li:first-child {
+  border-top: 1px solid #dfdfdf;
 }
 .city-list li {
   border-top: 1px solid #dfdfdf;
