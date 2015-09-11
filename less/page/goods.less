@@ -158,30 +158,52 @@
 }
 
 .wishlist-label {
-  z-index: 10;
+  z-index: 100;
   position: absolute;
-  right: 1rem;
-  top: 1rem;
-  height: 4rem;
-  width: 4rem;
-  line-height: 4rem;
+  right: 0;
+  top: 0;
+  height: 8rem;
+  width: 8rem;
   text-align: center;
-  border-radius: 50%;
-  border: 1px solid #ed5565;
   color: #ed5565;
   font-size: 16px;
+  //background-color: #ed5565;
+  //pointer-events:none;
+  &:after {
+    content: "";
+    position: absolute;
+    top: 1rem;
+    left: 3rem;
+    height: 4rem;
+    width: 4rem;
+    border: 1px solid #ed5565;
+    border-radius: 50%;
+    box-shadow: 1px 1px 2px rgba(255, 255, 255, .1);
+  }
   &.@{ns}active {
     color: #fff;
-    background-color: #ed5565;
+    &:after {
+      background-color: #ed5565;
+    }
+  }
+  i {
+    position: absolute;
+    top: 1rem;
+    left: 3rem;
+    height: 4rem;
+    width: 4rem;
+    line-height: 4rem;
+    z-index: 10;
   }
 }
 
-.abs-label{
+.abs-label {
   z-index: 10;
   position: absolute;
   top: 1.2rem;
   left: 0;
 }
+
 .activity-label {
   position: relative;
   display: inline-block;
@@ -244,7 +266,7 @@
   }
 }
 
-.coupon-label{
+.coupon-label {
   display: inline-block;
   padding: .3rem 1rem;
   background: url("../images/svg-coupon-label.svg") no-repeat center;
@@ -252,10 +274,10 @@
   color: #f8c651;
 }
 
-.toggle-activity-list{
-  li{
+.toggle-activity-list {
+  li {
     padding: .8rem 0;
-    &:first-child{
+    &:first-child {
       border-top: 1px solid @baseBorderColor;
     }
   }
@@ -323,13 +345,34 @@
   }
 }
 
-.goods-number-values{
-  li{
+.goods-number-values {
+  li {
     padding: 1.2rem 0;
   }
 }
 
-.agreement-block{
+.agreement-block {
   padding: 1.5rem 1rem;
 }
 
+.detail-content {
+  padding: 1.2rem 1rem;
+}
+
+.addition-intro {
+  border: 1px solid #f5e2b2;
+  box-shadow: 0 0 2px rgba(0, 0, 0, .1);
+  border-radius: 4px;
+  margin-top: .8rem;
+  padding: .8rem;
+  background: #fbf3df;
+  &:empty{
+    display: none;
+  }
+  .addition-content {
+    margin: .3rem 0 .6rem;
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+}

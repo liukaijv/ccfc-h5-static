@@ -112,7 +112,7 @@
         this.spinning = new Spinning(this.$spinning, this.$spinning.data());
 
         this.$el
-            .on('click.spinner', "[data-spin='up'],[data-spin='down']", $.proxy(this.spin, this))
+            .on('tap.spinner click.spinner', "[data-spin='up'],[data-spin='down']", $.proxy(this.spin, this))
             .on('mousedown.spinner', "[data-spin='up'],[data-spin='down']", $.proxy(this.spin, this));
 
         $(document).on('mouseup.spinner', $.proxy(function () {
@@ -132,7 +132,7 @@
         }
     };
 
-    Spinner.delay = 500;
+    Spinner.delay = 0;
 
     Spinner.prototype = {
         constructor: Spinner,

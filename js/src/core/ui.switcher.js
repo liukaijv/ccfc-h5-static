@@ -78,7 +78,7 @@
         show: function (tab) {
 
             var me = this,
-                $this = $this = this.$element;
+                $this = this.$element;
 
             tab = isNaN(tab) ? $(tab) : $this.find(this.options.toggle).eq(tab);
 
@@ -118,7 +118,7 @@
 
         reset: function () {
             var me = this,
-                $this = $this = this.$element;
+                $this = this.$element;
 
             $this.find(this.options.toggle).removeClass("cc-active");
             this.connect.each(function () {

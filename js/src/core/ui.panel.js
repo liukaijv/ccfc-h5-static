@@ -197,6 +197,7 @@
     $.fn.panel = Plugin;
 
     // 自动绑定
+
     $doc.on('click.panel', '[data-role="panel"]', function (e) {
         e.preventDefault();
         var $this = $(this);

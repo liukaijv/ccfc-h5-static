@@ -31,11 +31,7 @@ window.onerror = function (message, url, line) {
 
 $(function () {
 
-    // if ('addEventListener' in document) {
-    //     document.addEventListener('DOMContentLoaded', function() {
-    //         FastClick.attach(document.body);
-    //     }, false);
-    // }
+    //FastClick.attach(document.body);
 
     var $loading = $("#cc-loading");
     $(window).load(function () {

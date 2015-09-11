@@ -93,7 +93,7 @@ module.exports = function (grunt) {
                         // 'js/src/core/ui.cityselect.js',
                         'js/src/core/ui.form_params.js',
                         'js/src/core/ui.pureview.js',
-                        'js/src/core/ui.switcher.js',
+                        //'js/src/core/ui.switcher.js',
                         'js/src/core/ui.iscroll.js',
                         'js/src/core/ui.calendar.js',
                         'js/src/core/ui.password.js',

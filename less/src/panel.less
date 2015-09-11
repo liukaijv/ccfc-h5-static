@@ -25,11 +25,17 @@
   position: fixed;
   .transition(margin-left 0.3s ease-in-out);
   overflow: hidden;
+  top: 0;
+  right: 0;
+  left: 0;
+  bottom: 0;
 }
 
 .@{ns}panel-content {
   .box-sizing(border-box);
-  position: fixed;
+  // ios8 bug
+  //position: fixed;
+  position: absolute;
   top: 0;
   bottom: 0;
   left: 0;
@@ -37,6 +43,7 @@
   z-index: @panel-zindex+1;
   width: @panel-content-width;
   max-width: 100%;
+  min-height: 100%;
 
   overflow-x: hidden;
   overflow-y: auto;
