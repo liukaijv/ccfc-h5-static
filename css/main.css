@@ -2507,13 +2507,31 @@ img {
   color: #000000;
 }
 .goods-tags {
-  margin: 0 10px;
   border-top: 1px solid #dfdfdf;
-  padding: 12px 0;
+  padding: 1.2rem 0 .2rem;
 }
-.goods-tags a {
+.goods-tags .cc-icon {
+  margin-top: -3px;
+  margin-right: 3px;
+}
+.goods-tags .tag-label {
   display: inline-block;
-  margin-left: 10px;
+  margin-right: .6rem;
+}
+.goods-tags .tag-label:nth-child(2n+1) {
+  color: #566ed1;
+}
+.goods-tags .tag-label:nth-child(2n+2) {
+  color: #f86851;
+}
+.goods-tags .tag-label:nth-child(2n+3) {
+  color: #47d873;
+}
+.goods-tags .tag-label:nth-child(2n+4) {
+  color: #47adca;
+}
+.goods-tags .tag-label:nth-child(2n+5) {
+  color: #999;
 }
 .cc-score {
   display: inline-block;

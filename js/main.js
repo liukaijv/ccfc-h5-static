@@ -3699,6 +3699,7 @@ var UI = UI || {};
         return data ? func(data) : func;
     };
 
+
     $.UI = UI;
 
 })(jQuery, UI);// 抽屉菜单插件

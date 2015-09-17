@@ -33,12 +33,30 @@
 }
 
 .goods-tags {
-  margin: 0 10px;
   border-top: 1px solid @baseBorderColor;
-  padding: 12px 0;
-  a {
+  padding: 1.2rem 0 .2rem;
+  .@{ns}icon {
+    margin-top: -3px;
+    margin-right: 3px;
+  }
+  .tag-label {
     display: inline-block;
-    margin-left: 10px;
+    margin-right: .6rem;
+    &:nth-child(2n+1) {
+      color: #566ed1;
+    }
+    &:nth-child(2n+2) {
+      color: #f86851;
+    }
+    &:nth-child(2n+3) {
+      color: #47d873;
+    }
+    &:nth-child(2n+4) {
+      color: #47adca;
+    }
+    &:nth-child(2n+5) {
+      color: #999;
+    }
   }
 }
 
@@ -366,7 +384,7 @@
   margin-top: .8rem;
   padding: .8rem;
   background: #fbf3df;
-  &:empty{
+  &:empty {
     display: none;
   }
   .addition-content {
