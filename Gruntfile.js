@@ -55,7 +55,7 @@ module.exports = function (grunt) {
                 files: [
                     {
                         expand: true,
-                        src: ['css/main.min.css', 'js/main.min.js'],
+                        src: ['css/main.min.css', 'js/main.min.js', 'css/main.css'],
                         dest: 'D:/wamp/www/fontend/public/wechat',
                         filter: 'isFile'
                     }
@@ -85,8 +85,8 @@ module.exports = function (grunt) {
                         'js/src/core/ui.mask.js',
                         'js/src/core/ui.modal.js',
                         'js/src/core/ui.notify.js',
-                         'js/src/core/ui.imagelazyload.js',
-                         'js/src/core/ui.smoothScroll.js',
+                        'js/src/core/ui.imagelazyload.js',
+                        'js/src/core/ui.smoothScroll.js',
                         // 'js/src/core/ui.slider.js',
                         'js/src/core/ui.swipe.js',
                         // 'js/src/core/ui.refresh.js',

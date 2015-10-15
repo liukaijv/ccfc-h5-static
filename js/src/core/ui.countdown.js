@@ -15,7 +15,10 @@
         var defaults = {
             diffTime: 0,
             attr: 'data-time',
-            finishText: '已结束'
+            finishText: '已结束',
+            onFinish: function () {
+
+            }
         }
 
         var opts = $.extend(defaults, options || {});
@@ -36,7 +39,7 @@
             setInterval(function () {
 
                 nowTime = new Date();
-                TS = endTime.getTime() - nowTime.getTime()  + opts.diffTime;
+                TS = endTime.getTime() - nowTime.getTime() + opts.diffTime;
                 D = Math.floor(TS / (1000 * 60 * 60 * 24)); //天
                 H = Math.floor(TS / (1000 * 60 * 60)) % 24; //小时
                 M = Math.floor(TS / (1000 * 60)) % 60; //分钟
@@ -51,6 +54,7 @@
                     var timeStr = D + H + M + S;
                 } else {
                     var timeStr = opts.finishText;
+                    $.isFunction(opts.onFinish) && opts.onFinish();
                 }
                 me.html(timeStr);
 

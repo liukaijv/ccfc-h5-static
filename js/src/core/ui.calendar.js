@@ -95,7 +95,8 @@
                 // if(me.hasClass('cc-active')) return;
                 cell = me.parent();
                 date = cell.attr('data-year') + formatNumber(cell.attr('data-month'), 2) + formatNumber(me.attr('data-date'), 2);
-                el.trigger(ev, date);
+                var id = me.find('input').val();
+                el.trigger(ev, [date, id]);
                 el.find('.cc-calendar-current-day').removeClass('cc-calendar-current-day')
                 el.find('.cc-calendar-calendar tbody a').removeClass('cc-active');
                 me.addClass('cc-active');
@@ -301,6 +302,9 @@
                         if (printDate.getTime() === date.getTime()) {
                             if (v.price != '') {
                                 output = '&yen;' + v.price;
+                                if (v.id) {
+                                    output += '<input type="hidden" value="' + v.id + '">';
+                                }
                             }
                             return false;
                         }
