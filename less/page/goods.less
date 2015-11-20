@@ -394,3 +394,37 @@
     }
   }
 }
+
+.activity-status {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 60px;
+  height: 60px;
+  overflow: hidden;
+  span {
+    display: block;
+    height: 25px;
+    line-height: 25px;
+    width: 120px;
+    background: #51dbf8;
+    color: #fff;
+    .transform-origin(30px 10px);
+    .rotate(45deg);
+    position: relative;
+    left: -10px;
+    top: -10px;
+    &.prepend {
+      background: #566ed1;
+    }
+    &.doing {
+      background: #12b143;
+    }
+    &.finished {
+      background: #999999;
+    }
+    &.done {
+      background: #51dbf8;
+    }
+  }
+}

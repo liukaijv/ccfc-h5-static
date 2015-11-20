@@ -1,10 +1,11 @@
 // 基础骨架 
 
 @headerHeight: 4.4rem;
-@headerIndex: 1;
+@headerIndex: 10;
 
 .@{ns}header {
   position: relative;
+  z-index: @headerIndex;
   height: @headerHeight;
   background: #f08519;
   // box-shadow: inset 0 -1px 0 #C50,0 1px 0 rgba(0,0,0,0.1),0 1px 7px rgba(0,0,0,0.18);
@@ -427,7 +428,7 @@
     top: 0;
     left: 3 * @angleSm;
     &:before {
-      top: -@angleSm ;
+      top: -@angleSm;
       .caret-up(@angleSm, #fdb34c);
       left: 0;
     }
@@ -437,13 +438,13 @@
     top: @angleSm;
     left: 0;
     &:before {
-      top: -@angleLg ;
+      top: -@angleLg;
       left: 0;
       border-top: @angleLg solid #f68b00;
       border-right: @angleLg solid transparent;
     }
     &:after {
-      top: -@angleLg ;
+      top: -@angleLg;
       left: -@angleSm;
       border-top: @angleLg solid #ffb800;
       border-right: @angleSm solid transparent;
@@ -452,7 +453,7 @@
   }
 }
 
-.@{ns}icon{
+.@{ns}icon {
   display: inline-block;
   vertical-align: middle;
 }

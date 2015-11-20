@@ -76,8 +76,4 @@ $(function () {
         scrollTop > offTop ? topElement.addClass('cc-active') : topElement.removeClass('cc-active');
     }, 50)).trigger('scroll');
 
-    // $('.wishlist-label').on('click', function(){
-    // 	$(this).toggleClass('cc-active');
-    // });
-
 });

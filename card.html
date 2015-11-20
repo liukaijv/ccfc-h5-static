@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no, minimal-ui">
+    <title>cczc webapp</title>
+    <!-- 其它的meta标签后面再加 -->
+    <!-- <link rel="stylesheet" href="css/amazeui.min.css" /> -->
+    <link rel="stylesheet" href="css/font-awesome.min.css"/>
+    <link rel="stylesheet" href="css/main.min.css"/>
+    <script src="js/vendors/jquery/jquery.min.js"></script>
+    <script src="js/main.min.js"></script>
+</head>
+<body>
+
+<header class="cc-header">
+    <a href="#" class="cc-back" data-back></a>
+
+    <h2 class="cc-title">支付中心</h2>
+</header>
+
+<ul class="cc-list">
+    <li>
+        <div class="list-inner flex-row flex-middle">
+            <div class="mr10">
+                <img src="images/wechat-icon.png" width="40">
+            </div>
+            <div class="line2 flex">
+                商品名称
+            </div>
+            <div class="ml10 color-primary">
+                ￥2343.00
+            </div>
+        </div>
+    </li>
+</ul>
+
+<div class="divider-gutter">
+</div>
+
+<ul class="cc-list">
+    <li class="input-row">
+        <label>银行卡号</label>
+        <input class="cc-input" placeholder="银行卡号">
+    </li>
+    <li class="input-row">
+        <label>卡类型</label>
+        <select class="cc-input">
+            <option>信用卡</option>
+        </select>
+    </li>
+    <li class="input-row">
+        <label>姓名</label>
+        <input class="cc-input" placeholder="开户姓名">
+    </li>
+    <li class="input-row">
+        <label>身份证</label>
+        <input class="cc-input" placeholder="身份证号">
+    </li>
+    <li class="input-row">
+        <label>有效期</label>
+        <input class="cc-input" placeholder="卡正面有效期（如0812月年）">
+    </li>
+    <li class="input-row">
+        <label>安全码</label>
+        <input class="cc-input" placeholder="卡背面后三位数">
+    </li>
+    <li class="input-row">
+        <label>手机号</label>
+        <input type="text" class="cc-input" placeholder="银行预留手机号">
+    </li>
+</ul>
+
+<div class="m10 pt5 color-gray">
+    提示：单笔限额2万元,每日累计限额2万元
+</div>
+
+<div class="m10 pt10">
+    <a href="index.html" class="btn-yellow btn-fill btn-block lg" id="goPayment">立即支付</a>
+</div>
+
+<script>
+    $(function () {
+        $('#pay').click(function () {
+            $.prompt('请输入手机验证码', function () {
+                console.log('你确定了');
+            });
+            return false;
+        });
+        $('#goPayment').click(function () {
+                        var me = $(this);
+                        $.confirm('取消报名定金不予退还，确定继续支付？', function () {
+                            location.href = me.attr('href');
+                        });
+                        return false;
+                    });
+    });
+</script>
+
+</body>
+</html>
