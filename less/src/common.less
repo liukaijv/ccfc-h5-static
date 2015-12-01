@@ -136,6 +136,11 @@
   .line-clamp(2, @baseLineHeight);
 }
 
+.force-line2 {
+  .line-clamp(2, @baseLineHeight);
+  height: 2*@baseFontSize*@baseLineHeight;
+}
+
 .force-inline {
   display: inline-block !important;
 }
@@ -146,4 +151,8 @@
 
 .force-hide {
   display: none !important;
+}
+
+.circle {
+  border-radius: 50%;
 }

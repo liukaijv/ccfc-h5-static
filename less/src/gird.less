@@ -1,6 +1,7 @@
 // make table row 
-.table-row() {
+.table-row(@spacing: 0) {
   display: table;
+  border-spacing: @spacing;
   width: 100%;
   table-layout: fixed;
   & > .col,
@@ -8,7 +9,9 @@
     display: table-cell;
   }
 }
-
+.table-row{
+  .table-row(0px 5px);
+}
 //  flex gird
 .flex-row {
   .display();

@@ -77,7 +77,7 @@
 </div>
 
 <div class="m10 pt10">
-    <a href="#" class="btn-yellow btn-fill btn-block lg" id="pay">立即支付</a>
+    <a href="index.html" class="btn-yellow btn-fill btn-block lg" id="goPayment">立即支付</a>
 </div>
 
 <script>
@@ -88,6 +88,13 @@
             });
             return false;
         });
+        $('#goPayment').click(function () {
+                        var me = $(this);
+                        $.confirm('取消报名定金不予退还，确定继续支付？', function () {
+                            location.href = me.attr('href');
+                        });
+                        return false;
+                    });
     });
 </script>
 

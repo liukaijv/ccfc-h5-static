@@ -71,7 +71,7 @@ module.exports = function (grunt) {
                     'js/main.js': [
                         // 'js/src/core/ui.cookie.js',
                         // 'js/src/core/ui.store.js',
-                        // 'js/src/core/ui.fastclick.js',
+                         'js/src/core/ui.fastclick.js',
                         // 'js/src/core/ui.url.js',
                         'js/src/core/ui.touch.js',
                         'js/src/core/ui.hammer.js',
@@ -92,6 +92,7 @@ module.exports = function (grunt) {
                         // 'js/src/core/ui.refresh.js',
                         // 'js/src/core/ui.cityselect.js',
                         'js/src/core/ui.form_params.js',
+                        'js/src/core/ui.input_mask.js',
                         'js/src/core/ui.pureview.js',
                         //'js/src/core/ui.switcher.js',
                         'js/src/core/ui.iscroll.js',

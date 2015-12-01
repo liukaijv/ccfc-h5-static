@@ -164,6 +164,22 @@
     background-color: #fff;
     margin: 1.5rem 0;
     box-shadow: 0 0 3px rgba(0, 0, 0, .2);
+    &.recommend-cover-item {
+      position: relative;
+      margin: 0;
+      .item-content {
+        position: absolute;
+        left: 0;
+        top: 50%;
+        width: 100%;
+        .translate(0, -50%);
+        color: #fff;
+        text-align: center;
+      }
+      &:last-child {
+        margin-bottom: 1.5rem;
+      }
+    }
   }
 }
 
@@ -427,4 +443,36 @@
       background: #51dbf8;
     }
   }
+}
+
+//search
+.search-list {
+  li {
+    padding: 1.2rem 0;
+  }
+  .keyword-input {
+    border: none;
+    box-sizing: border-box;
+    padding-right: 1.6rem;
+  }
+  .search-display-text {
+    text-align: right;
+    .text-truncate;
+    width: 70%;
+  }
+}
+
+.panel-search {
+  .panel-search-top {
+    padding: 20px 15px;
+  }
+
+  .panel-search-body {
+    background: #fff;
+    overflow-x: hidden;
+    overflow-y: auto;
+    -webkit-overflow-scrolling: touch;
+    padding-left: 5px;
+  }
+
 }

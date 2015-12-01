@@ -33,6 +33,8 @@ $(function () {
 
     //FastClick.attach(document.body);
 
+    //FastClick.attach(document.body);
+
     var $loading = $("#cc-loading");
     $(window).load(function () {
         $loading.delay(100).fadeOut("slow");
