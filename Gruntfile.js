@@ -71,7 +71,7 @@ module.exports = function (grunt) {
                     'js/main.js': [
                         // 'js/src/core/ui.cookie.js',
                         // 'js/src/core/ui.store.js',
-                         'js/src/core/ui.fastclick.js',
+                        'js/src/core/ui.fastclick.js',
                         // 'js/src/core/ui.url.js',
                         'js/src/core/ui.touch.js',
                         'js/src/core/ui.hammer.js',
@@ -99,6 +99,10 @@ module.exports = function (grunt) {
                         'js/src/core/ui.calendar.js',
                         'js/src/core/ui.password.js',
                         'js/src/core/ui.countdown.js',
+                        'js/src/core/ui.pageScroll.js',
+                        'js/src/core/ui.infiniteScroll.js',
+                        'js/vendors/waypoints/jquery.waypoints.js',
+                        'js/vendors/waypoints/shortcuts/infinite.js',
                         'js/test.js',
                     ]
                 },

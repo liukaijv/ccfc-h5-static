@@ -466,7 +466,6 @@
   .panel-search-top {
     padding: 20px 15px;
   }
-
   .panel-search-body {
     background: #fff;
     overflow-x: hidden;
@@ -474,5 +473,21 @@
     -webkit-overflow-scrolling: touch;
     padding-left: 5px;
   }
-
 }
+
+[data-inputmask]{
+  &:-moz-placeholder {
+    color: #ccc;
+    font-size: @baseFontSize;
+  }
+  &::-moz-placeholder {
+    color: #ccc;
+    font-size: @baseFontSize;
+  }
+  &::-webkit-input-placeholder {
+    color: #ccc;
+    font-size: @baseFontSize;
+  }
+  font-size: 18px;
+}
+

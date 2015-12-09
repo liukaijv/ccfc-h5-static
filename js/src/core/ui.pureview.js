@@ -133,13 +133,13 @@
         }
 
         $slider.find(options.selector.pinchZoom).each(function () {
-            $(this).data('amui.pinchzoom', new PinchZoom($(this), {}));
+            $(this).data('pinchzoom', new PinchZoom($(this), {}));
             $(this).on('pz_doubletap', function (e) {
                 //
             });
         });
 
-        $images.on('click.pureview.amui', function (e) {
+        $images.on('click.pureview', function (e) {
             e.preventDefault();
             var clicked = $images.index(this);
 
@@ -156,7 +156,7 @@
         });
 
         $pureview.find('.cc-pureview-direction a').
-            on('click.direction.pureview.amui', function (e) {
+            on('click.direction.pureview', function (e) {
                 e.preventDefault();
                 var $clicked = $(e.target).parent('li');
 
@@ -168,25 +168,25 @@
             });
 
         // Nav Contorl
-        this.$navItems.on('click.nav.pureview.amui', function () {
+        this.$navItems.on('click.nav.pureview', function () {
             var index = me.$navItems.index($(this));
             me.activate(me.$slides.eq(index));
         });
 
         // Close Icon
         $pureview.find(options.selector.close).
-            on('click.close.pureview.amui', function (e) {
+            on('click.close.pureview', function (e) {
                 e.preventDefault();
                 me.close();
             });
 
-        $slider.hammer().on('click.pureview.amui', function (e) {
+        $slider.hammer().on('click.pureview', function (e) {
             e.preventDefault();
             me.toggleToolBar();
-        }).on('swipeleft.pureview.amui', function (e) {
+        }).on('swipeleft.pureview', function (e) {
             e.preventDefault();
             me.nextSlide();
-        }).on('swiperight.pureview.amui', function (e) {
+        }).on('swiperight.pureview', function (e) {
             e.preventDefault();
             me.prevSlide();
         });
@@ -196,16 +196,16 @@
             velocity: 0.35
         });
 
-        // $(document).on('keydown.pureview.amui', $.proxy(function(e) {
-        //   var keyCode = e.keyCode;
-        //   if (keyCode == 37) {
-        //     this.prevSlide();
-        //   } else if (keyCode == 39) {
-        //     this.nextSlide();
-        //   } else if (keyCode == 27) {
-        //     this.close();
-        //   }
-        // }, this));
+        $(document).on('keydown.pureview', $.proxy(function (e) {
+            var keyCode = e.keyCode;
+            if (keyCode == 37) {
+                this.prevSlide();
+            } else if (keyCode == 39) {
+                this.nextSlide();
+            } else if (keyCode == 27) {
+                this.close();
+            }
+        }, this));
 
     };
 
@@ -336,13 +336,13 @@
     function Plugin(option) {
         return this.each(function () {
             var $this = $(this);
-            var data = $this.data('am.pureview');
+            var data = $this.data('ui.pureview');
             var options = $.extend({},
-                UI.utils.options($this.data('amPureview')),
+                UI.utils.options($this.data('options')),
                 typeof option == 'object' && option);
 
             if (!data) {
-                $this.data('am.pureview', (data = new PureView(this, options)));
+                $this.data('ui.pureview', (data = new PureView(this, options)));
             }
 
             if (typeof option == 'string') {

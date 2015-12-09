@@ -599,33 +599,45 @@ if (window.jQuery || window.Zepto) {
 }
 
 $(function () {
-    var $swipe = $('[data-role="swipe"]');
-    var showDots = $swipe.data('dots');
-    var swipeItemLen = $swipe.find('.swipe-wrap li').length;
-    var counts = $swipe.find('.counts');
-    if (swipeItemLen > 1 && showDots) {
-        var html = '<ol class="dots">';
-        for (var i = 0; i < swipeItemLen; i++) {
-            html += '<li class="dot">' + i + '</li>';
+
+    $('[data-role="swipe"]').each(function () {
+
+        var $swipe = $(this),
+            showDots = $swipe.data('dots'),
+            swipeItemLen = $swipe.find('.swipe-wrap li').length,
+            showCounts = $swipe.data('counts'),
+            counts = $swipe.find('.counts'),
+            instance = $swipe.data('instance');
+
+        if (!instance) {
+            $swipe.data('instance', (instance = Swipe($swipe.get(0), {
+                callback: function (pos) {
+                    //console.log(pos);
+                    //pos = pos % 2;
+                    counts.find('.current-index').html(pos + 1);
+                    $swipe.find('.dot').eq(pos).addClass('active').siblings().removeClass('active');
+                }
+            })));
         }
-        html += '</ol>';
-        $swipe.append(html);
-        $swipe.find('.dot').on('click', function () {
-            appSwipe.slide($(this).text());
-            $(this).addClass('active').siblings().removeClass('active');
-        }).first().addClass('active');
-    }
-    if (counts.length < 1) {
-        counts = $('<div class="counts"><span class="current-index"></span>/<span class="total-index"></span></div>').appendTo($swipe);
-        counts.find('.current-index').html('1');
-        counts.find('.total-index').html(swipeItemLen);
-    }
-    window.appSwipe = Swipe($swipe.get(0), {
-        callback: function (pos) {
-            //console.log(pos);
-            //pos = pos % 2;
-            counts.find('.current-index').html(pos + 1);
-            $swipe.find('.dot').eq(pos).addClass('active').siblings().removeClass('active');
+
+        if (swipeItemLen > 1 && showDots) {
+            var html = '<ol class="dots">';
+            for (var i = 0; i < swipeItemLen; i++) {
+                html += '<li class="dot">' + i + '</li>';
+            }
+            html += '</ol>';
+            $swipe.append(html);
+            $swipe.find('.dot').on('click', function () {
+                instance.slide($(this).text());
+                $(this).addClass('active').siblings().removeClass('active');
+            }).first().addClass('active');
         }
-    });
+
+        if (counts.length < 1 && showCounts) {
+            counts = $('<div class="counts"><span class="current-index"></span>/<span class="total-index"></span></div>').appendTo($swipe);
+            counts.find('.current-index').html('1');
+            counts.find('.total-index').html(swipeItemLen);
+        }
+
+    })
 });

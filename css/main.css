@@ -1513,28 +1513,28 @@ img {
 .cc-header {
   position: relative;
   z-index: 10;
-  height: 4.4rem;
+  height: 44px;
   background: #f08519;
 }
 .cc-header .cc-title {
   position: absolute;
   z-index: 10;
   top: 0;
-  left: 5.4rem;
-  right: 5.4rem;
-  line-height: 4.4rem;
-  font-size: 1.8rem;
+  left: 45px;
+  right: 45px;
+  line-height: 44px;
+  font-size: 18px;
   text-align: center;
   color: #fff;
 }
 .cc-header .cc-back {
   position: relative;
   z-index: 11;
-  height: 4.4rem;
-  width: 4.4rem;
+  height: 44px;
+  width: 44px;
   display: inline-block;
   padding-left: 15px;
-  line-height: 4.4rem;
+  line-height: 44px;
   white-space: nowrap;
   color: #fff;
 }
@@ -1542,25 +1542,25 @@ img {
   content: "";
   vertical-align: middle;
   display: inline-block;
-  width: 1.4rem;
-  height: 1.4rem;
+  width: 14px;
+  height: 14px;
   border: #ffffff solid;
-  border-width: 0.2rem 0.2rem 0 0;
+  border-width: 2px 2px 0 0;
   -webkit-transform: rotate(225deg);
   -ms-transform: rotate(225deg);
   transform: rotate(225deg);
   min-width: auto;
 }
 .cc-header .cc-search {
-  height: 4.4rem;
-  width: 4.4rem;
+  height: 44px;
+  width: 44px;
   background: url("../images/svg-icon-search.svg") no-repeat center;
-  background-size: 2.4rem 2.4rem;
+  background-size: 24px 24px;
   text-indent: -9999em;
   overflow: hidden;
 }
 .cc-header-secondary {
-  height: 4.4rem;
+  height: 44px;
 }
 @-webkit-keyframes ui-loading {
   0% {
@@ -1621,7 +1621,7 @@ img {
 }
 .cc-header + .center-container {
   position: absolute;
-  top: 4.4rem;
+  top: 44px;
   left: 0;
   right: 0;
   bottom: 0;
@@ -1941,6 +1941,21 @@ img {
 .cc-icon {
   display: inline-block;
   vertical-align: middle;
+}
+[data-role="infinite"] {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  width: 100%;
+  overflow: auto;
+}
+.cc-header + [data-role="infinite"] {
+  top: 44px;
+}
+.cc-header-secondary {
+  top: 88px;
 }
 .cc-tabs-nav {
   margin: 0;
@@ -2275,11 +2290,11 @@ img {
 }
 .cc-pureview-actions .cc-back {
   position: relative;
-  height: 4.4rem;
-  width: 4.4rem;
+  height: 44px;
+  width: 44px;
   display: inline-block;
   padding-left: 15px;
-  line-height: 4.4rem;
+  line-height: 44px;
   white-space: nowrap;
   color: #fff;
 }
@@ -2541,6 +2556,15 @@ img {
 }
 .icon-svg-shopping-cart {
   background-image: url("../images/svg-icon-shopping-cart.svg");
+}
+table td,
+table th {
+  padding: 5px 10px;
+  border: 1px solid #DDD;
+}
+ul,
+ol {
+  list-style-position: inside;
 }
 .goods-reserve-btn {
   min-height: 44px;
@@ -3021,6 +3045,21 @@ ul.cc-score {
   overflow-y: auto;
   -webkit-overflow-scrolling: touch;
   padding-left: 5px;
+}
+[data-inputmask] {
+  font-size: 18px;
+}
+[data-inputmask]:-moz-placeholder {
+  color: #ccc;
+  font-size: 14px;
+}
+[data-inputmask]::-moz-placeholder {
+  color: #ccc;
+  font-size: 14px;
+}
+[data-inputmask]::-webkit-input-placeholder {
+  color: #ccc;
+  font-size: 14px;
 }
 .list-lg {
   padding-top: 5px;

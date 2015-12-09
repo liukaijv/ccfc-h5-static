@@ -61,6 +61,15 @@ $(function () {
         }
     });
 
+    var infinite = new Waypoint.Infinite({
+        element: $('.infinite-container')[0],
+        onAfterPageLoad: function($items){
+            $items.find('img[data-echo]').each(function(){
+                this.src = this.getAttribute('data-echo');
+            });
+        }
+    });
+
     var topElement = $('[data-role="gotop"]'),
         offTop = 50,
         gotTopTpl = ['<div class="cc-top" data-role="gotop">',
