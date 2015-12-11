@@ -39,7 +39,7 @@
         '<a href="javascript:;" class="cc-back" ' +
         'data-cc-close="pureview"></a></div>' +
         '</div>',
-
+        
         className: {
             prevSlide: 'cc-pureview-slide-prev',
             nextSlide: 'cc-pureview-slide-next',

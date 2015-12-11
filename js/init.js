@@ -29,9 +29,13 @@ window.onerror = function (message, url, line) {
 
 };
 
-$(function () {
+window.onload = function () {
+    setTimeout(function () {
+        window.scrollTo(0, 1)
+    }, 0);
+}
 
-    //FastClick.attach(document.body);
+$(function () {
 
     //FastClick.attach(document.body);
 
@@ -63,10 +67,11 @@ $(function () {
 
     var infinite = new Waypoint.Infinite({
         element: $('.infinite-container')[0],
-        onAfterPageLoad: function($items){
-            $items.find('img[data-echo]').each(function(){
-                this.src = this.getAttribute('data-echo');
-            });
+        onAfterPageLoad: function ($items) {
+            echo.refresh();
+            if ($items.find('[data-role="pureview"]').length || $items.is('[data-role="pureview"]')) {
+                $('[data-role="pureview"]').pureview();
+            }
         }
     });
 

@@ -23,6 +23,8 @@
         this.sections = $(this.settings.section, this.elem);
         this.total = this.sections.length;
         this.current = 0;
+        this.paginationList = "";
+        this.pagination = null;
         this.init();
         this.bindEvents();
 
@@ -37,7 +39,8 @@
         waitingPeriod: 0,
         beforeMove: null,
         afterMove: null,
-        direction: 'vertical'
+        direction: 'vertical',
+        pagination: true
     };
 
     PageScroll.prototype = {
@@ -77,9 +80,18 @@
                     leftPos = leftPos + 100;
                 else
                     topPos = topPos + 100;
+                if (settings.pagination == true) {
+                    var activeClass = i == 0 ? 'active' : '';
+                    me.paginationList += '<li class="' + activeClass + '"></li>';
+                }
             });
-        }
-        ,
+
+            if (settings.pagination == true) {
+                this.pagination = $('ul.page-scroll-pagination');
+                if (this.pagination.length < 1) this.pagination = $("<ul class='page-scroll-pagination'></ul>").appendTo('body');
+                this.pagination.addClass(settings.direction).html(me.paginationList);
+            }
+        },
 
         bindEvents: function () {
             var me = this,
@@ -115,7 +127,7 @@
             lastAnimation = timeNow;
 
             // 执行动画
-            direction == 'next' ? this.current++ : this.current--;
+            direction == 'next' ? me.current++ : me.current--;
             var pos = me.current * 100 * -1;
             $.isFunction(settings.beforeMove) && settings.beforeMove(me.current + 1);
 
@@ -152,6 +164,8 @@
                 });
             }
 
+            this.pagination.find('li').eq(this.current).addClass('active').siblings().removeClass('active');
+
         },
 
         prev: function () {
@@ -179,4 +193,4 @@
         });
     }
 
-}(jQuery))
+}(window.jQuery || window.Zepto))

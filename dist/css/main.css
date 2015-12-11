@@ -2400,16 +2400,7 @@ img {
   float: left;
   width: 100%;
   position: relative;
-}
-.unslider {
-  position: relative;
-  overflow: auto;
-}
-.unslider li {
-  list-style: none;
-}
-.unslider ul li {
-  float: left;
+  text-align: center;
 }
 .cc-panel {
   display: none;
@@ -2565,6 +2556,58 @@ table th {
 ul,
 ol {
   list-style-position: inside;
+}
+.infinite-more-link {
+  box-sizing: content-box;
+  display: block;
+  position: relative;
+  margin: 8px auto;
+  width: 16px;
+  height: 16px;
+  background: #ccc;
+  border: 8px solid #bbb;
+  border-radius: 50%;
+  text-indent: -9999em;
+  overflow: hidden;
+  -webkit-animation: pulse 2s ease-in-out 0s infinite;
+  animation: pulse 2s ease-in-out 0s infinite;
+}
+.route-list + .infinite-more-link {
+  margin-top: -5px;
+}
+@-webkit-keyframes pulse {
+  0% {
+    background-color: #ccc;
+  }
+  25% {
+    background-color: #eee;
+  }
+  50% {
+    background-color: #ccc;
+  }
+  75% {
+    background-color: #eee;
+  }
+  100% {
+    background-color: #ccc;
+  }
+}
+@keyframes pulse {
+  0% {
+    background-color: #ccc;
+  }
+  25% {
+    background-color: #eee;
+  }
+  50% {
+    background-color: #ccc;
+  }
+  75% {
+    background-color: #eee;
+  }
+  100% {
+    background-color: #ccc;
+  }
 }
 .goods-reserve-btn {
   min-height: 44px;
@@ -2753,6 +2796,7 @@ ul.cc-score {
   transform: translate(0, -50%);
   color: #fff;
   text-align: center;
+  z-index: 10;
 }
 .route-list > li.recommend-cover-item:last-child {
   margin-bottom: 1.5rem;

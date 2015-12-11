@@ -11,3 +11,60 @@ table td, table th {
 ul, ol {
   list-style-position: inside;
 }
+
+.infinite-more-link {
+  box-sizing: content-box;
+  display: block;
+  position: relative;
+  margin: 8px auto;
+  width: 16px;
+  height: 16px;
+  background: #ccc;
+  border: 8px solid #bbb;
+  border-radius: 50%;
+  text-indent: -9999em;
+  overflow: hidden;
+  //box-shadow: 0 0 4px rgba(0, 0, 0, .2);
+  -webkit-animation: pulse 2s ease-in-out 0s infinite;
+  animation: pulse 2s ease-in-out 0s infinite;
+}
+
+.route-list + .infinite-more-link{
+  margin-top: -5px;
+}
+
+@-webkit-keyframes pulse {
+  0% {
+    background-color: #ccc;
+  }
+  25% {
+    background-color: #eee;
+  }
+  50% {
+    background-color: #ccc;
+  }
+  75% {
+    background-color: #eee;
+  }
+  100% {
+    background-color: #ccc;
+  }
+}
+
+@keyframes pulse {
+  0% {
+    background-color: #ccc;
+  }
+  25% {
+    background-color: #eee;
+  }
+  50% {
+    background-color: #ccc;
+  }
+  75% {
+    background-color: #eee;
+  }
+  100% {
+    background-color: #ccc;
+  }
+}

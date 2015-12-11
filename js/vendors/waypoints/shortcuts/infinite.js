@@ -32,33 +32,39 @@
             this.options.onBeforePageLoad()
             this.destroy()
             this.$container.addClass(this.options.loadingClass)
-            $.get($(this.options.more).attr('href'), $.proxy(function (data) {
+            $.ajax({
+                url: $(this.options.more).attr('href'),
+                beforeSend: function () {
+                    $("#cc-loading").hide();
+                },
+                success: $.proxy(function (data) {
 
-                var $data = $($.parseHTML(data))
-                var $newMore = $data.find(this.options.more)
+                    var $data = $($.parseHTML(data))
+                    var $newMore = $data.find(this.options.more)
 
-                var $items = $data.find(this.options.items)
+                    var $items = $data.find(this.options.items)
 
-                if (!$items.length) {
-                    $items = $data.filter(this.options.items)
-                }
-                this.$container.append($items)
-                this.$container.removeClass(this.options.loadingClass)
+                    if (!$items.length) {
+                        $items = $data.filter(this.options.items)
+                    }
+                    this.$container.append($items)
+                    this.$container.removeClass(this.options.loadingClass)
 
-                if (!$newMore.length) {
-                    $newMore = $data.filter(this.options.more)
-                }
-                if ($newMore.length) {
-                    this.$more.replaceWith($newMore)
-                    this.$more = $newMore
-                    this.waypoint = new Waypoint(this.options)
-                }
-                else {
-                    this.$more.remove()
-                }
+                    if (!$newMore.length) {
+                        $newMore = $data.filter(this.options.more)
+                    }
+                    if ($newMore.length) {
+                        this.$more.replaceWith($newMore)
+                        this.$more = $newMore
+                        this.waypoint = new Waypoint(this.options)
+                    }
+                    else {
+                        this.$more.remove()
+                    }
 
-                this.options.onAfterPageLoad($items)
-            }, this))
+                    this.options.onAfterPageLoad($items)
+                }, this)
+            })
         }, this)
     }
 

@@ -1,4 +1,7 @@
 // 图片延时加载
+// edit by guo
+// add function echo.refresh();
+
 // "description": "Lazy-loading with data-* attributes, offset and throttle options",
 // "author": "@toddmotto",
 // "license": "MIT",
@@ -135,6 +138,17 @@
         }
         clearTimeout(poll);
     };
+
+    echo.refresh = function () {
+        echo.render();
+        if (document.addEventListener) {
+            root.addEventListener('scroll', debounceOrThrottle, false);
+            root.addEventListener('load', debounceOrThrottle, false);
+        } else {
+            root.attachEvent('onscroll', debounceOrThrottle);
+            root.attachEvent('onload', debounceOrThrottle);
+        }
+    }
 
     return echo;
 

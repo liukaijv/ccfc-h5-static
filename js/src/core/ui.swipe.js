@@ -1,4 +1,5 @@
 // todo 增加分页参数
+// add 定时播放 
 
 /*
  * Swipe 2.0
@@ -603,7 +604,9 @@ $(function () {
     $('[data-role="swipe"]').each(function () {
 
         var $swipe = $(this),
+            auto = $swipe.data('auto'),
             showDots = $swipe.data('dots'),
+            period = $swipe.data('period') || 5000,
             swipeItemLen = $swipe.find('.swipe-wrap li').length,
             showCounts = $swipe.data('counts'),
             counts = $swipe.find('.counts'),
@@ -612,12 +615,16 @@ $(function () {
         if (!instance) {
             $swipe.data('instance', (instance = Swipe($swipe.get(0), {
                 callback: function (pos) {
-                    //console.log(pos);
-                    //pos = pos % 2;
                     counts.find('.current-index').html(pos + 1);
                     $swipe.find('.dot').eq(pos).addClass('active').siblings().removeClass('active');
                 }
             })));
+        }
+
+        if (auto) {
+            setInterval(function () {
+                instance.next();
+            }, period);
         }
 
         if (swipeItemLen > 1 && showDots) {
