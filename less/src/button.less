@@ -4,13 +4,13 @@
   margin-left: 10px;
   text-align: center;
   white-space: nowrap;
-  font-size: 1.4rem;
-  height: 3.6rem;
-  line-height: 3.6rem;
+  font-size: 14px;
+  height: 36px;
+  line-height: 36px;
   border: 1px solid @baseBorderColor;
-  padding: 0 1.2rem;
+  padding: 0 12px;
   color: @baseColor;
-  border-radius: .2rem;
+  border-radius: 2px;
   background: transparent;
   cursor: pointer;
   &:first-child {
@@ -18,14 +18,14 @@
   }
   // size
   &.lg {
-    font-size: 1.6rem;
-    height: 4.4rem;
-    line-height: 4.4rem;
+    font-size: 16px;
+    height: 42px;
+    line-height: 42px;
   }
   &.sm {
-    font-size: 1.2rem;
-    height: 2.8rem;
-    line-height: 2.8rem;
+    font-size: 12px;
+    height: 28px;
+    line-height: 28px;
   }
   &:disabled,
   &.disabled {
@@ -41,6 +41,10 @@
   // button&{
   // 	width: 100%;
   // }
+  & > input[type="radio"],
+  & > input[type="checkbox"] {
+    display: none;
+  }
 }
 
 .create-btn(@bgColor, @borderColor, @color: #fff) {
@@ -74,6 +78,16 @@
   }
 }
 
+.btn-default {
+  .btn;
+  background: #fff;
+  &.ui-active {
+    background: #f08519;
+    border-color: #f08519;
+    color: #fff;
+  }
+}
+
 .btn-primary {
   .create-btn(#f08519, darken(#f08519, 5%), #f86f4b);
 }
@@ -94,4 +108,10 @@
 
 .btn-block {
   display: block;
+}
+
+.check-btn {
+  margin-left: 0!important;
+  margin-right: 10px;
+  margin-top: 10px;
 }

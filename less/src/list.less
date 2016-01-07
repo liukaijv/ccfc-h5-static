@@ -19,7 +19,7 @@
 
 .@{ns}list {
   background-color: #fff;
-  li {
+  > li {
     padding: 1rem 0;
     margin: 0 1rem;
     border-bottom: 1px solid @baseBorderColor;
@@ -30,7 +30,7 @@
     &.list-header {
       // color: @brown;
       .clearfix;
-      margin: 0;
+      margin: -1px 0 0 0;
       padding: 1.2rem 1rem;
       border-bottom: 1px solid @baseBorderColor;
       &.link-item {
@@ -84,18 +84,20 @@
     }
     // form
     &.input-row {
+      padding-top: 8px;
+      padding-bottom: 8px;
       .display();
       .flex-middle;
       label {
         //color: #b4783b;
-        line-height: 3.6rem;
-        margin-right: .5rem;
+        line-height: 36px;
+        margin-right: 5px;
       }
       .@{ns}input {
         .flex();
-        min-height: 3.6rem;
-        line-height: 2rem;
-        padding: .8rem 0.4rem;
+        min-height: 36px;
+        line-height: 20px;
+        padding: 8px 4px;
         border: none;
         color: #666;
       }

@@ -22,6 +22,9 @@
     var $doc = $(document);
     var supportTransition = UI.support.transition;
 
+    //记录滚动条位置
+    var scrollPos;
+
     var Modal = function (element, options) {
         this.options = $.extend({}, Modal.DEFAULTS, options || {});
         this.$element = $(element);
@@ -73,6 +76,13 @@
             if (!this.$element.length) {
                 return;
             }
+
+            scrollPos = {
+                x: window.scrollX,
+                y: window.scrollY
+            };
+
+            //console.log(scrollPos);
 
             // 判断如果还在动画，就先触发之前的closed事件
             if (this.transitioning) {
@@ -145,6 +155,10 @@
                 isPopup && $element.removeClass(options.className.out);
                 $element.hide();
                 this.transitioning = 0;
+                this.active = false;
+                setTimeout(function () {
+                    window.scrollTo(scrollPos.x, scrollPos.y);
+                }, 0);
             };
 
             $element.
@@ -160,8 +174,6 @@
                 .emulateTransitionEnd(options.duration);
 
             $.mask.close($element, false);
-
-            this.active = false;
 
         },
 
@@ -221,7 +233,8 @@
     }
 
     // 自动绑定
-    $doc.on('click.modal', '[data-role="modal"]', function () {
+    $doc.on('click.modal', '[data-role="modal"]', function (e) {
+        e.preventDefault();
         var $this = $(this);
         var options = UI.utils.options($this.attr('data-options'));
         // console.log(options);
@@ -258,7 +271,7 @@
 
         return modal.modal({
             cancelable: false,
-            onConfirm: function () {                
+            onConfirm: function () {
                 $.isFunction(callbackOk) && callbackOk.call(this);
                 modal.remove();
             }
@@ -294,11 +307,11 @@
 
         return modal.modal({
             cancelable: false,
-            onConfirm: function () {                
+            onConfirm: function () {
                 $.isFunction(callbackOk) && callbackOk.call(this);
                 modal.remove();
             },
-            onCancel: function () {                
+            onCancel: function () {
                 $.isFunction(callbackCancel) && callbackCancel.call(this);
                 modal.remove();
             }

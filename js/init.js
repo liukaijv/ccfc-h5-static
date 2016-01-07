@@ -65,8 +65,8 @@ $(function () {
         }
     });
 
-    var infinite = new Waypoint.Infinite({
-        element: $('.infinite-container')[0],
+    // 无限加载
+    $('.infinite-container').infinite({
         onAfterPageLoad: function ($items) {
             echo.refresh();
             if ($items.find('[data-role="pureview"]').length || $items.is('[data-role="pureview"]')) {

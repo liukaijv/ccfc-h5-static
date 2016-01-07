@@ -43,8 +43,8 @@
   display: inline-block;
   vertical-align: middle;
   position: relative;
-  height: 2rem;
-  width: 2rem;
+  height: 20px;
+  width: 20px;
   border: 1px solid #dfdfdf;
   vertical-align: middle;
   -webkit-appearance: none;
@@ -59,36 +59,36 @@
     &:after {
       content: "";
       position: absolute;
-      left: .4rem;
-      top: .5rem;
-      width: 1.1rem;
-      height: .6rem;
+      left: 4px;
+      top: 5px;
+      width: 11px;
+      height: 6px;
       background-color: transparent;
-      border-width: .3rem;
+      border-width: 3px;
       border-color: #fff;
       border-style: solid;
       border-top: none;
       border-right: none;
       .rotate(-45deg);
       .sm & {
-        border-width: .2rem;
-        left: .2rem;
-        top: .3rem;
+        border-width: 2px;
+        left: 2px;
+        top: 3px;
       }
     }
   }
   &.sm {
-    height: 1.6rem;
-    width: 1.6rem;
+    height: 16px;
+    width: 16px;
     &:checked {
       background-color: #47d873;
       border: 1px solid #47d873;
       &:after {
-        width: 1rem;
-        height: .5rem;
-        border-width: .2rem;
-        left: .25rem;
-        top: .27rem;
+        width: 10px;
+        height: 5px;
+        border-width: 2px;
+        left: 2.4px;
+        top: 2.8px;
       }
     }
   }
@@ -160,9 +160,9 @@
 }
 
 .@{ns}input {
-  min-height: 3.6rem;
-  line-height: 3.6rem;
-  padding: 0 0.4rem;
+  min-height: 36px;
+  line-height: 36px;
+  padding: 0 4px;
   border: 1px solid @baseBorderColor;
   outline: none;
 }

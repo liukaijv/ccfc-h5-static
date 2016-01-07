@@ -615,6 +615,10 @@ $(function () {
         if (!instance) {
             $swipe.data('instance', (instance = Swipe($swipe.get(0), {
                 callback: function (pos) {
+                    if (swipeItemLen == 2) {
+                        pos = pos % 2;
+                    }
+                    //console.log(pos);
                     counts.find('.current-index').html(pos + 1);
                     $swipe.find('.dot').eq(pos).addClass('active').siblings().removeClass('active');
                 }

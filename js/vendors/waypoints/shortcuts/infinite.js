@@ -4,10 +4,10 @@
  Licensed under the MIT license.
  https://github.com/imakewebthings/waypoints/blog/master/licenses.txt
  */
-(function () {
+// edit by guo
+(function ($) {
     'use strict'
 
-    var $ = window.jQuery
     var Waypoint = window.Waypoint
 
     /* http://imakewebthings.com/waypoints/shortcuts/infinite-scroll */
@@ -86,5 +86,25 @@
     }
 
     Waypoint.Infinite = Infinite
-}())
+
+    // jquery plugin
+    $.fn.infinite = function (option) {
+        return this.each(function () {
+            var $this = $(this);
+            var data = $this.data('infinite');
+            var options = $.extend({element: $this[0]}, Infinite.defaults,
+                typeof option == 'object' && option);
+
+            if (!data) {
+                $this.data('infinite', (data = new Waypoint.Infinite(options)));
+            }
+
+            if (typeof option == 'string') {
+                data[option] && data[option]();
+            }
+
+        });
+    }
+
+}(jQuery))
 ;
