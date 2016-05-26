@@ -1,9 +1,16 @@
-module.exports = function (grunt) {
+module.exports = function (grunt) {    
+
     grunt.initConfig({
+        meta: {
+            basePath: './',
+            lessPath: 'less/src',
+            cssPath: 'css/',
+            targetPath: 'D:/wamp/www/fontend/public/wechat'
+        },
         less: {
             development: {
                 options: {
-                    paths: ["less/src"]
+                    paths: ["<%= meta.lessPath %>"]
                 },
                 files: {
                     "css/main.css": "less/main.less"
@@ -18,49 +25,39 @@ module.exports = function (grunt) {
                         src: ['js/vendors/**', 'js/main.js', 'js/main.min.js'],
                         dest: 'dist/',
                         filter: 'isFile'
-                    },
-                    {
-                        expand: true,
-                        src: ['js/vendors/**', 'js/main.js', 'js/main.min.js'],
-                        dest: 'E:/website/ccfz/1/',
-                        filter: 'isFile'
                     }
                 ]
             },
             css: {
                 files: [
-                    {expand: true, src: ['css/**'], dest: 'dist/', filter: 'isFile'},
-                    {expand: true, src: ['css/**'], dest: 'E:/website/ccfz/1/', filter: 'isFile'}
+                    {expand: true, src: ['css/**'], dest: 'dist/', filter: 'isFile'}                   
                 ]
             },
             fonts: {
                 files: [
-                    {expand: true, src: ['fonts/**'], dest: 'dist/', filter: 'isFile'},
-                    {expand: true, src: ['fonts/**'], dest: 'E:/website/ccfz/1/', filter: 'isFile'}
+                    {expand: true, src: ['fonts/**'], dest: 'dist/', filter: 'isFile'}                   
                 ]
             },
             images: {
                 files: [
-                    {expand: true, src: ['images/**'], dest: 'dist/', filter: 'isFile'},
-                    {expand: true, src: ['images/**'], dest: 'E:/website/ccfz/1/', filter: 'isFile'}
+                    {expand: true, src: ['images/**'], dest: 'dist/', filter: 'isFile'}                   
                 ]
             },
             html: {
                 files: [
-                    {expand: true, src: ['*.html'], dest: 'dist/', filter: 'isFile'},
-                    {expand: true, src: ['*.html'], dest: 'E:/ccfz/1/', filter: 'isFile'}
+                    {expand: true, src: ['*.html'], dest: 'dist/', filter: 'isFile'}                   
                 ]
             },
-            copy2pro: {
-                files: [
-                    {
-                        expand: true,
-                        src: ['css/main.min.css', 'js/main.min.js', 'css/main.css'],
-                        dest: 'D:/wamp/www/fontend/public/wechat',
-                        filter: 'isFile'
-                    }
-                ]
-            },
+            // copy2pro: {
+            //     files: [
+            //         {
+            //             expand: true,
+            //             src: ['css/main.min.css', 'js/main.min.js', 'css/main.css'],
+            //             dest: '<%= meta.targetPath %>',
+            //             filter: 'isFile'
+            //         }
+            //     ]
+            // },
         },
         concat: {
             options: {
