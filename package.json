@@ -1,9 +1,9 @@
 {
-  "name": "ccze_wechat_client",
+  "name": "ccfc_h5_static",
   "version": "0.0.1",
-  "description": "ccze wechat client frontend static resource",
-  "author": "gxm",
-  "license": "BSD",
+  "description": "ccfc h5 client frontend static resource",
+  "author": "noop",
+  "license": "MIT",
   "devDependencies": {
     "grunt": "^0.4.5",
     "grunt-contrib-compress": "^0.13.0",
@@ -15,6 +15,6 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/liukaijv/ccze_webapp.git"
+    "url": "https://github.com/liukaijv/ccfc-h5-static.git"
   }
 }
